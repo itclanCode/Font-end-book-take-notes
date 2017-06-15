@@ -1,0 +1,23 @@
+/*
+* 动态的关闭窗口页面
+*
+* @author:wangzhenchuan;
+* @time:2017/6/15;
+* 
+*/
+*{
+	padding:0;
+	margin:0;
+}
+body{
+	font-family:"微软雅黑";
+	font-size:16px;
+}
+p{
+	text-align:center;
+	margin:20px auto;
+}
+input{
+	padding:5px;
+	cursor:pointer;
+}
