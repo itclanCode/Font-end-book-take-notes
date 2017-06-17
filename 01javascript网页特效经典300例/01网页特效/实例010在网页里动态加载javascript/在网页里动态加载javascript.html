@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>在网页动态的加载js</title>
+	<style type="text/css">
+		    *{
+		    	padding:0;
+		    	margin:0;
+		    }
+		    body{
+		    	font-family:"微软雅黑";
+		    	font-size:16px;
+		    }
+		    p{
+		    	text-align:center;
+		    	margin:20px auto;
+		    }
+	</style>
+</head>
+<body>
+		<p>
+			<input type="button" value="动态的加载js" name="">
+		</p>
+
+		<script type="text/javascript">
+			     var oBtn = document.querySelector("input");
+			     // 动态加载javascript
+			     function loadJs(){
+			     	 // 得到html的头部dom
+			     	 var theHead = document.getElementsByTagName("head")[0];
+			     	 // 创建dom脚本对象的实例
+			     	 var myScript = document.createElement("script"); // 创建script标签
+			     	 myScript.src="js/myjs.js";  // 指定脚本的路径    
+			     	 myScript.type="text/javascript";// 指定脚本的类型
+			     	 myScript.defer = true;   // 程序下载完后在解析和执行
+			     	 theHead.appendChild(myScript);// 把dom挂载到头部
+			     }
+			     oBtn.onclick = function(){
+			     	loadJs();
+			     }
+
+
+		</script>
+</body>
+</html>

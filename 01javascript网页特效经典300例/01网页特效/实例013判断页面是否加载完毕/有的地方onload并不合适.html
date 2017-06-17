@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>判断网页是否加载完毕</title>
+</head>
+<body>	
+
+
+		<script type="text/javascript">
+			        // 加载完成以后的回调函数
+			        function myOnload(){
+			        	alert("网页加载完毕");  // 提示一句话
+			        }
+			        // 使用window.onload元素进行回调处理
+			        window.onload = myOnload;
+			        // 文档加载完毕的回调,为onloadstatechange设置回调
+			        document.onreadstatechange = myPageLoad;
+			        // 定义回调函数
+			        function myPageLoad(){
+			        	// 判断文档的readyState属性
+			        	if(document.readyState == "complete"){
+			        		alert("文档加载完毕");  // 提示一句话
+			        	}
+			        }
+		</script>
+</body>
+</html>

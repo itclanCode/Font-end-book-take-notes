@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>禁止网页放入框架</title>
+</head>
+<body>
+
+		<script type="text/javascript">
+		          alert(self);
+		          alert(self ==  window);
+			      /*判断当前网页是否为顶层框架的网页*/
+			      if(self != top){
+			      	  // 如果不是顶层框架或者不是独立窗口打开的本网页,则跳转
+			      	  top.location.href = self.location.href;
+			      }
+		</script>
+		<!-- 
+			 self:打开任何一个网页,浏览器会首先创建一个窗口,这个窗口就是一个window对象,也就是js运行所依附的全局坏境对象和全局作用域对象,self指窗口本身,它返回的对象跟window对象是一模一样,也正为如此,window对象常用方法和函数都可以用self代替window,比如self.close()与window.close()都是等同的
+		 -->
+</body>
+</html>

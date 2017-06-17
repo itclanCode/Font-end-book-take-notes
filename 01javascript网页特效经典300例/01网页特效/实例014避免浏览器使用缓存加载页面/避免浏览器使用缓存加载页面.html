@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>避免浏览器使用缓存加载页面</title>
+</head>
+<body>
+
+
+		<p style="text-align:center">
+			<!-- 定义网页的超级链接 -->
+			<a href="a.html">链接一</a>
+			<a href="b.html">链接二</a>
+		</p>
+
+		<script type="text/javascript">
+			      // 加载完成以后的回调函数
+			      function myOnload(){
+			      	  // 获取所有的超级链接DOM
+			      	  var links = document.getElementsByTagName("a");
+			      	  for(var i = 0;i<links.length;i++){ // 遍历
+			      	  	 var link = links[i]; // 得到当前链接的DOM
+			      	  	 var href = link.href;  // 链接地止
+			      	  	 if(href.indexOf("?")>-1){// 链接地止中是否包含了参数
+			      	  	 	// 修改链接的地止,加上一个参数:当前事件的毫秒数
+			      	  	 	href += '&time='+new Date().getTime();
+			      	  	 }else{
+			      	  	 	href +='?time='+new Date().getTime();
+			      	  	 }
+			      	  	 link.href = href;
+			      	  }
+			      }
+			      // 使用window的onload元素进行回调处理
+			      window.onload = myOnload;
+		</script>
+</body>
+</html>

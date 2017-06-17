@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>带关闭按钮的右下角图片广告</title>
+	<style type="text/css">
+		    *{
+		    	padding:0;
+		    	margin:0;
+		    }
+		    body{
+		    	font-size:16px;
+		    	font-family:"微软雅黑";
+		    }
+		    div{
+		    	width:180px;
+		    	height:120px;
+		    	background:#ccc;
+		    	position:fixed;
+		    	bottom:120px;
+		    	right:10px;
+		    }
+		    a{
+		    	text-decoration:none;
+		    	color:#fff;
+		    	position:absolute;
+		    	right:0;
+		    	top:0;
+		    }
+	</style>
+</head>
+<body>
+		<div>
+			 <a href="javascript:;">×</a>
+		</div>
+
+		<script type="text/javascript">
+		          var oDiv = document.querySelector("div"),
+		              oClose = document.querySelector("a");
+
+			     
+			      // 关闭函数
+			      function closeAD(){
+			      	  oDiv.style.display = "none";   // 隐藏div
+			      }
+			      oClose.onclick = function(){
+			      	 closeAD();
+			      }
+
+		</script>
+</body>
+</html>

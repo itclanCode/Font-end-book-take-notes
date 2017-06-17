@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>窗口打开时显示大广告图片及其自动关闭</title>
+	<style type="text/css">
+		    *{
+		    	padding:0;
+		    	margin:0;
+		    }
+		    body{
+		    	font-size:16px;
+		    	font-family:"微软雅黑";
+		    	text-align:center;
+		    }
+	</style>
+</head>
+<body>
+		<p>网页内容上部</p>
+		<p></p>
+		<p>
+			网页内容下部
+		</p>
+
+		<script type="text/javascript">
+			      // 展示广告图片
+			      function showAdPic(){
+			      	  //获得广告的DOM
+			      	  var oP = document.querySelectorAll("p")[1];
+			      	  oP.innerHTML = '<img src="img/code.jpg" title="5秒之后,图片自动隐藏" width="344" height="344">'
+			      	  // 设置定时器,5秒以后关闭广告
+			      	  setTimeout(function(){
+			      	  	  var oP = document.querySelectorAll("p")[1];
+			      	  	  oP.style.display = "none";   // 隐藏图片
+			      	  },5000);
+			      }
+			      window.onload = showAdPic;
+		</script>
+</body>
+</html>
