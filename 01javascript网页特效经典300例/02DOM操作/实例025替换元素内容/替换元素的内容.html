@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>替换元素的内容</title>
+	<style type="text/css">
+		    *{
+		    	padding:0;
+		    	margin:0;
+		    }
+		    body{
+		    	text-align:center;
+		    }
+	</style>
+</head>
+<body>
+		<p>
+			 <input type="button" value="替换内容"  name="">
+		</p><br /><br />
+		<!-- 定义元素 -->
+		<p id="myDom">
+			<a href="#">一个a链接</a>&nbsp;&nbsp;<span>一span文本标签</span>
+		</p>
+		<script type="text/javascript">
+		          var oBtn = document.querySelector("input");
+			      // 替换元素内容
+			      function replaceContent(){
+			      	   // 得到元素的DOM
+			      	   var myDom = document.getElementById("myDom");
+			      	   // 使用innerHTML直接替换
+			      	   myDom.innerHTML = "<span>一span文本标签</span>&nbsp;<a href='#'>一个a链接</a>";
+			      }
+			      oBtn.onclick = function(){
+			      	  replaceContent();
+			      }
+		</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>根据标签名获取网页中的多个元素</title>
+	<style type="text/css">
+		    *{
+		    	padding:0;
+		    	margin:0;
+		    }
+		    p{
+		    	text-align:center;
+		    }
+	</style>
+</head>
+<body>
+		<p>
+			<!-- 定义元素 -->
+			<span>欢迎关注微信itclan公众号</span>
+			<span>我是川川</span><br /><br />
+			<input type="button" value="根据标签名获取网页中的多个元素" name="">
+		</p>
+		<script type="text/javascript">
+				 var oBtn = document.querySelector("input");
+			     // 获取多个DOM
+			     function getDomsByTag(){
+			     	// 获取的doms
+			     	var doms = document.getElementsByTagName("span");
+			     	var str = "";       // 定义拼接字符串变量
+			     	for(var i = 0;i<doms.length;i++){
+			     		str += doms[i].innerHTML;  // 拼接文本
+			     		str += ","
+			     	}
+			     	alert("两个DOM的文本是"+str);
+			     }
+			     oBtn.onclick = function(){
+			     	 getDomsByTag();
+			     }
+
+		</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>主动触发按钮的单击事件</title>
+	<style type="text/css">
+		    *{
+		    	padding:0;
+		    	margin:0;
+		    }
+		    p{
+		    	text-align:center;
+		    }
+	</style>
+</head>
+<body>
+		<p>
+			<!-- 定义按钮 -->
+			<input type="button" value="触发按钮的事件" name="" /><br /><br />
+			<!-- 定义按钮,单击事件是一个提示信息 -->
+			<input type="button" id="myBtn"  value="提示按钮" name="">
+		</p>
+
+		<script type="text/javascript">
+				  var oBtn1 = document.querySelectorAll("input")[0],
+				      oBtn2 = document.querySelectorAll("input")[1];
+			      // 触发按钮单击的事件
+			      function fireBtnClick(){
+			      	   // 获取到按钮DOM
+			      	   var myBtn = document.getElementById("myBtn");
+			      	   // 使用click()函数
+			      	   myBtn.click();
+			      }
+			      oBtn1.onclick = function(){
+			      	  fireBtnClick();
+			      }
+			      oBtn2.onclick = function(){
+			      	  alert("我被提示了");
+			      }
+		</script>
+</body>
+</html>

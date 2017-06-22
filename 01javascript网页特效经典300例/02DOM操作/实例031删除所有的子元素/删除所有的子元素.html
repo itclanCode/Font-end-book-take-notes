@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>删除所有子元素</title>
+	<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+			}
+			body{
+				text-align:center;
+			}
+	</style>
+</head>
+<body>
+		<ul>
+			<li>清华</li>
+			<li>北大</li>
+			<li>上大</li>
+			<li>武大</li>
+		</ul>
+		<input type="button" value="删除所有的子元素" name="">
+		<script type="text/javascript">
+				   var oBtn = document.querySelector("input");
+			       // 删除元素的函数
+			       function deleteChilds(){
+			       	    var ul = document.getElementsByTagName("ul")[0];// 获取父DOM
+			       	    // 判断是否包含子元素
+			       	    if(ul.hasChildNodes()){
+			       	    	var len = ul.childNodes.length;   // 子元素的个数
+			       	    	for(var i = 0;i<len;i++){         // 遍历
+			       	    		ul.removeChild(ul.childNodes[0]); // 从第一个元素开始删除
+			       	    	}
+			       	    }
+			       }
+			       oBtn.onclick = function(){
+			       	  deleteChilds();
+			       }
+		</script>
+</body>
+</html>

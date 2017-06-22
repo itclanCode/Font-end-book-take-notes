@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>动态创建网页新元素</title>
+	<style type="text/css">
+		     *{
+		     	padding:0;
+		     	margin:0;
+		     }
+		     p{
+		     	text-align:center;
+		     }
+	</style>
+</head>
+<body>
+	   <p>
+	   		<input type="button" value="创建新的元素" name="">
+	   </p>
+	   <!-- 定义为新元素挂接的容器元素 -->
+	   <p id="p1"></p>
+	   <p id="p2"></p>
+
+	   <script type="text/javascript">
+	   			  var oBtn = document.querySelector("input");
+	              // 创建新元素
+	              function createNewElements(){
+	              	  // 使用innerHTML创建新元素
+	              	  var p1 = document.getElementById("p1");
+	              	  // 设置innerHTML内容
+	              	  p1.innerHTML = "<span>我的dom文本1,川川</span>";
+	              	  // 使用createElement来创建新元素
+	              	  var span = document.createElement('span');
+	              	  // 为新原宿内容创建一个文本节点
+	              	  span.appendChild(document.createTextNode("我的dom文本2,欢迎关注微信itclan公众号"));
+	              	  var p2 = document.getElementById("p2");
+	              	  // 挂接
+	              	  p2.appendChild(span);
+	              }
+	              oBtn.onclick = function(){
+	              	  createNewElements();
+	              }
+	   </script>
+</body>
+</html>
