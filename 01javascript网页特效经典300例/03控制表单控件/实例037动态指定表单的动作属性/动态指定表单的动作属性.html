@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>动态指定表单的动作属性</title>
+	<style type="text/css">
+		    *{
+		    	padding:0;
+		    	margin:0;
+		    }
+		    body{
+		    	text-align:center;
+		    }
+	</style>
+</head>
+<body>
+		<!-- 定义表单 -->
+		<form method="post">
+				请选择提交方法:
+				<input type="text"  name="newURL" /><br /><br />
+				<input type="button" value="修改提交Action" name="">
+		</form>
+		<script type="text/javascript">
+				  var oBtn = document.querySelectorAll("input")[1];
+			      // 动态制定表单的动作属性
+			      function modifyAction(){
+			      	  var f = document.forms[0]; // 获取表单DOM
+			      	  var newURL = f.newURL.value; //选择的方法
+			      	  f.action = newURL;  // 修改提交表单的action地止
+			      	  // 用提示框展示结果
+			      	  alert("表单当前的动作:"+f.action);
+			      }
+			      oBtn.onclick = function(){
+			      	 modifyAction();
+			      }
+		</script>
+</body>
+</html>

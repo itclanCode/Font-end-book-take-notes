@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>控制表单控件</title>
+	<style type="text/css">
+		    *{
+		    	padding:0;
+		    	margin:0;
+		    }
+		    body{
+		    	text-align:center;
+		    }
+	</style>
+</head>
+<body>
+		<!-- 定义表单 -->
+		<form>
+			  文本框:<input type="text" name="myText" /><br /><br />
+			  单选框:<input type="radio" name="myRadio" value="1" />
+			  <input type="radio" name="myRadio" value="2" /><br /><br />
+
+			  下拉列表:
+			  <select name="mySelect">
+			  			<option value="">==请选择==</option>
+			  			<option value="1">1</option>
+			  			<option value="2">2</option>
+			  </select>
+			  <br /><br />
+			  <input type="button" value="得到所有控件的值" name="">
+		</form>
+		<script type="text/javascript">
+				  var oBtn = document.querySelectorAll("input")[3];
+			      // 遍历表单所有的控件
+			      function getValues(){
+			      	   var f = document.forms[0];  // 获取表单DOM
+			      	   var elements = f.elements;  // 获取所有表单控件数组
+			      	   var str = "";               // 拼接字符串
+			      	   // 循环遍历
+			      	   for(var i = 0;i<elements.length;i++){
+			      	   	   var e = elements[i];    // 当前的控件
+			      	   	   str += e.value;         // 拼接控件的值
+			      	   	   str += '\n';            // 拼接分隔符
+			      	   }
+			      	   alert(str);                 // 用提示框展示结果
+			      }
+			      oBtn.onclick = function(){
+			      	  getValues();
+			      }
+		</script>
+</body>
+</html>
