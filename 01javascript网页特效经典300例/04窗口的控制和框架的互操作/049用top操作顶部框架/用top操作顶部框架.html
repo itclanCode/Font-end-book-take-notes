@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>用top操作顶部框架</title>
+	<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+			}
+			body{
+				text-align:center;
+			}
+	</style>
+</head>
+<body>
+		<!-- 定义框架 -->
+		<iframe id="frame1"></iframe>
+		<iframe id="frame2"></iframe><br />
+		<input type="button" id="btn" value="用top操作顶部的框架" name="">
+		<script type="text/javascript">
+				  var oBtn = document.getElementById("btn");
+			      // 子框架的互相引用
+			      function alertFrames(){
+			      	  // 使用top变量得到顶层的父框架,这里就是window
+			      	  var topFrame = top;
+			      	  // 用提示框展示topFrame的html
+			      	  alert(topFrame.document.body.innerHTML);
+			      }
+			      oBtn.onclick = function(){
+			      	 alertFrames();
+			      }
+		</script>
+</body>
+</html>
