@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>为表单加上一个框</title>
+	<style type="text/css">
+		    *{
+		    	padding:0;
+		    	margin:0;
+		    }
+		    body{
+		    	text-align:center;
+		    }
+		    form{
+		    	margin:0 auto;
+		    }
+	</style>
+</head>
+<body>
+		<!-- 定义表单 -->
+		<form>
+			   文本框:<input type="text" name="myText"/><br /><br />
+			   单选框:<input type="radio" name="myRadio" value="1" />
+			   <input type="radio" name="myRadio" value="2" /><br /><br />
+			   下拉列表:
+			   <select name="mySelect">
+			   	   	   <option value="">==请选择==</option>
+			   	   	   <option value="1">1</option>
+			   	   	   <option value="2">2</option>
+			   	   	   <option value="3">3</option>
+			   </select><br /><br />
+			   <input type="button" id="btn" value="初始化" name="">
+		</form>
+		<script type="text/javascript">
+		         var onOff = true;
+				 var oBtn = document.getElementById("btn");
+			     // 为表单加上一个框
+			     function rangeIt(){
+			     	var f = document.forms[0];  // 获取表单DOM
+			     	// 动态地为表单指定边框样式
+			       /* f.style.width = "300px";    // 宽度
+			        f.style.border = "1px solid black"; // 边框*/
+			        f.style.cssText = "width:300px;border:1px solid black";
+			     }
+			     function subBorderFun(){
+			     	var f = document.forms[0];
+			     	f.style.cssText = "";
+			     }
+				 oBtn.onclick = function(){
+				 	if(onOff){
+				 		rangeIt();
+				 		onOff=false;
+				 	}else{
+				 		subBorderFun();
+				 		onOff = true;
+				 	}
+				     	
+			     }
+		</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>初始化表单里所有控件的值到最初状态</title>
+	<style type="text/css">
+		     *{
+		     	padding:0;
+		     	margin:0;
+		     }
+		     body{
+		     	text-align:center;
+		     }
+	</style>
+</head>
+<body>
+		<!-- 定义表单 -->
+		<form>
+			   文本框:<input type="text" name="myText"/><br /><br />
+			   单选框:<input type="radio" name="myRadio" value="1" />
+			   <input type="radio" name="myRadio" value="2" /><br /><br />
+			   下拉列表:
+			   <select name="mySelect">
+			   	   	   <option value="">==请选择==</option>
+			   	   	   <option value="1">1</option>
+			   	   	   <option value="2">2</option>
+			   	   	   <option value="3">3</option>
+			   </select><br /><br />
+			   <input type="button" id="btn" value="初始化" name="">
+		</form>
+		<script type="text/javascript">
+				   var oBtn = document.getElementById("btn"); // 获取按钮
+			       // 初始化表单里的所有控件的值到最初的状态
+			       function init(){
+			       	   var f = document.forms[0];  // 获取表单DOM
+			       	   f.reset();                  // 使用reset()函数
+			       }
+			       oBtn.onclick = function(){
+			       	  init();
+			       }
+		</script>
+</body>
+</html>
