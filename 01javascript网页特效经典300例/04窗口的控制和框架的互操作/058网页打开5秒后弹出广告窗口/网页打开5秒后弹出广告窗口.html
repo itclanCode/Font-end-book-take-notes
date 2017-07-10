@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>子框架的互相引用</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">			
+			     function init(){			// 初始化函数
+			     	setTimeout(function(){  // 五秒一个定时
+			     		// open一个新窗口
+			     		window.open('./ad.html','广告标题',"width=200,height=200,border=0")
+			     	})
+			     }
+		</script>
+	</head>
+	<body style="text-align:center">
+		    <h2>广告窗口将5秒后打开</h2>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>打开一个新的窗口</title>
+	<style type="text/css">
+		    *{
+		    	padding:0;
+		    	margin:0;
+		    }
+		    body{
+		    	text-align:center;
+		    }
+	</style>
+</head>
+<body>
+
+		<input type="button" value="打开了子窗口" name="">
+		<script type="text/javascript">
+				 var oBtn = document.querySelector("input");
+			     // 打开一个新的窗口
+			     function openNewWin(){
+			     	 // 使用window的open()函数打开一个子窗口
+			     	 var win = window.open("./得到时谁打开了子窗口.html");
+			     }
+			     oBtn.onclick = function(){
+			     	openNewWin();
+			     }
+		</script>
+</body>
+</html>

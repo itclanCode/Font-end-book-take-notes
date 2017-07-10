@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>通过子窗口获取数据输入</title>
+	<style type="text/css">
+		    *{
+		    	padding:0;
+		    	margin:0;
+		    }
+		    body{
+		    	text-align:center;
+		    }
+	</style>
+</head>
+<body>
+		<input type="button" value="打开子窗口" name="">
+		<script type="text/javascript">
+				   var oBtn = document.querySelector("input");
+			       // 为子窗口准备的传值函数
+			       function passValue(value){
+			       	   alert("子窗口输入的是"+val);  // 用于提示框展示结果
+			       }
+			       function openNewWin(){
+			       	   // 使用window的open()函数打开一个子窗口
+			       	   var win = window.open("./通过子窗口获取数据输入.html");
+			       }
+			       oBtn.onclick = function(){
+			       	  openNewWin();
+			       }
+		</script>
+</body>
+</html>

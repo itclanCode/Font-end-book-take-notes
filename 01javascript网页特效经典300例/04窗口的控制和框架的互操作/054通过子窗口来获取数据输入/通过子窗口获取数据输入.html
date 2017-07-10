@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>通过子窗口获取数据输入</title>
+	<style type="text/css">
+		     *{
+		     	padding:0;
+		     	margin:0;
+		     }
+		     body{
+		     	text-align:center;
+		     }
+	</style>
+</head>
+<body>
+
+		<!-- 定义输入框和按钮 -->
+		<input type="text"  name="mytext" id="mytext" />
+		<input type="button" name="" value="通过子窗口获取数据输入" />
+
+		<script type="text/javascript">
+		           var oBtn = document.querySelectorAll("input")[1];
+			       function passValue(){
+			       	   // 获取用户输入的值
+			       	   var val = document.getElementById("mytext").value;
+			       	   window.opener.passValue(value);  // 调用父窗口的函数传入值
+			       	   self.close();   // 关闭子窗口
+			       }
+			       oBtn.onclick = function(){
+			       	   passValue();
+			       }
+		</script>
+
+</body>
+</html>
