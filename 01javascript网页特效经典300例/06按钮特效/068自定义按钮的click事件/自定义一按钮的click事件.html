@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body onload = "definedBtnClick();" style="text-align:center">
+
+
+		<input type="button" value="一个按钮" id="myBtn" name="">
+
+		<script type="text/javascript">
+				  // 自定义按钮的click事件
+				  function definedBtnClick(){
+				  	   // 获得按钮的DOM
+				  	   var myBtn = document.getElementById("myBtn");
+				  	   // 定义click事件
+				  	   myBtn.onclick = function(){
+				  	   	   alert("按钮被单击了");  // 事件的内容逻辑
+				  	   }
+				  }
+
+
+		</script>
+</body>
+</html>

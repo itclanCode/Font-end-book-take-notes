@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+		<!-- 定义块区域 -->
+		<p style="margin:5px auto;width:100px;height:100px;border:1px solid black" onmouseover = "mOver(this)" onmouseout="mOut(this)">
+				把鼠标移到该区域
+		</p>
+		<script type="text/javascript">
+			      // 鼠标指针移进
+			      function mOver(pDom){
+			      	 pDom.style.fontSize = "20px";  // 调整字体大小为20像素
+
+			      }
+			      // 鼠标指针移出
+			      function mOut(pDom){
+			      	 pDom.style.fontSize = "";  // 调整字体大小为默认
+			      }
+		</script>
+</body>
+</html>

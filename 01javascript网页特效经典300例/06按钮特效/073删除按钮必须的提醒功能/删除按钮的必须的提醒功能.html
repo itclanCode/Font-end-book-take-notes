@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body style="text-align:center">
+		<!-- 定义按钮 -->
+		<h2>删除一条信息</h2>
+		<input type="button"  value="删除" id="myBtn" onclick="deleteInfo()" name="">
+
+		<script type="text/javascript">
+			     	// 删除按钮必须的提醒功能
+			     	function deleteInfo(){
+			     		var confirmdel = false;   // 初始化为false
+			     		// 使用弹出框来接受欧诺个户是否确认删除
+			     		confirmDel = window.confirm("确定要删除吗?");
+			     		if(confirmDel){
+			     			alert("删除成功");  // 这里给出提示
+			     		}else {
+			     			return false;    // 否则返回false,什么都不做
+			     		}
+			     	}
+		</script>
+</body>	
+</html>

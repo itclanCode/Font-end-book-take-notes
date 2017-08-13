@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+		<form action="" method="post" style="display:block;width:250px;height:100px;">
+			    <br />
+			    用户名:<input type="text"  name="username"><br />
+			    密码:<input type="password" onkeypress="formKeyPress()" name=""> 
+			    <input type="submit" value="提交" name=""><br />
+		</form>
+		<script type="text/javascript">
+				  // 当用户按下按键时
+				  function formKeyPress(event){
+				  	 if(event.keyCode == 13){ // 判断是否按的是Enter键
+				  	 	document.forms[0].submit();  // 提交
+				  	 }else{
+				  	 	return false;                // 返回
+				  	 }
+				  }
+
+		</script>
+</body>
+</html>

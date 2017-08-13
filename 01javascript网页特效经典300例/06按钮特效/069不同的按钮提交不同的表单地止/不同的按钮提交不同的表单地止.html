@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body  style="text-align:center">
+		<form action="" method="post" style="display:block;width:200px;height:200px;border:1px solid black;margin:0 auto">
+			   	<br /><br />
+			   	<input type="button" value="提交按钮一" id="myBtn1" name="" onclick="submitForm(this)" />
+			   	<br />
+			   	<input type="button" value="提交按钮二" id="myBtn2" onclick="submitForm(this)" name="" />
+		</form>
+		<script type="text/javascript">
+			     // 提交表单
+			     function submitForm(btn){
+			     	var btnId = btn.id;   // 获取单击按钮的id
+			     	var f = document.forms[0];// 当前的表单
+			     	if(btnId == 'myBtn1'){
+			     		f.action = "url1.html";
+			     	}else if(btnId =="myBtn2"){  // 如果是第二个按钮
+			     		f.action = "url2.html"; // 修改action地止
+			     	}
+			     	f.submit();                 // 提交表单
+			     }
+		</script>
+</body>
+</html>

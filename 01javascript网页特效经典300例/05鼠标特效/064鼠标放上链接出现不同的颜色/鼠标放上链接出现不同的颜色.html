@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body onload = "defineLinkColor()">
+		<!-- 定义链接 -->
+		<p><a href="#">链接一</a></p>
+		<p><a href="#">链接二</a></p>
+		<p><a href="#">链接三</a></p>
+
+		<script type="text/javascript">
+			     // 定义链接的mouseover事件
+			     function defineLinkColor(){
+			     	  // 获得网页里的所有链接的DOM
+			     	  var linkDoms = document.getElementsByTagName("a");
+			     	  // 遍历所有的链接DOM
+			     	  for(var i = 0;i<linkDoms.length;i++){
+			     	  	 linkDoms[i].index = i;
+			     	  	 // 为每个链接的mouseover定义事件回调
+			     	  	 // 鼠标移入
+			     	  	 linkDoms[i].onmouseover = function(){
+
+			     	  	 	for(var j = 0;j<linkDoms.length;j++){
+			     	  	 		linkDoms[j].style.color = "";
+			     	  	 	}
+			     	  	 	this.style.color = "red";  // 为当前的链接改变颜色样式
+			     	  	 }
+			     	  	 // 鼠标移出
+			     	  	 linkDoms[i].onmouseout = function(){
+
+			     	  	 	for(var j = 0;j<linkDoms.length;j++){
+			     	  	 		linkDoms[j].style.color = "";
+			     	  	 	}
+			     	  	 	this.style.color = "";  // 为当前的链接改变颜色样式
+			     	  	 }
+			     	  }
+			     }
+		</script>
+</body>
+</html>
