@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name    ="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset ="UTF-8">
+	<title>属性选择符</title>
+	<style>
+		   *[class]{
+		   	   color: #ff0000;
+		   	   font-size: 18px;
+		   }
+		   input[type="text"]{
+		   	 text-align: center;
+		   	 border: 1px solid #ff0000;
+		   	 background-color: #E8E8EE;	
+		   }
+		   p[title~="css"]{
+		   	   font-size: 20px;
+		   	   color: #ff0000;
+		   	   margin: 0;
+		   }
+		   p[title |= "css"]{
+				font: 20px;
+				color: #ff0000;
+				margin: 0;
+		   }
+	</style>
+</head>
+<body>
+	   <p class="paragraphs">带class属性的段落标签</p>
+	   <a href="">没有class属性的连接属性</a>
+	   <p>这个是没有class属性的段落标签</p>
+	   <a href="">带class属性的连接标签</a>
+
+	   <form action="" method="post">
+	   	      <input type="text" name="" value="這是一個文本框" id="">
+	   	      <input type="password" name="" value="這個是密碼框" id="">
+	   </form>
+	   <p title="css xhtml">title屬性值為xhtml css的段落標籤</p>
+	   <p title="css+xhtml">title屬性值為css xhtml的段落標籤</p>
+	   <p title="Cascading Style Sheets">title屬性值Cascading style sheet的簡稱為css的段落標籤</p>
+
+	   <p title="xhtml-css">title屬性值為xhtml css的段落標籤</p>
+	   <p title="css+xhtml">title屬性值為css xhtml的段落標籤</p>
+	   <p title="css-cascading style sheets">title屬性值Cascading style sheet的簡稱為css的段落標籤</p>
+</body>
+</html>

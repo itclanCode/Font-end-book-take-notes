@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>相邻选择器</title>
+	<style>
+		   /* p+strong+strong+strong+strong+strong{
+		   	  color: #ff0000;
+		   	  font-size: 18px;
+		   	  text-decoration:underline;
+		   } */
+		   strong+strong{
+		   	  color: #ff0000;
+		   	  font-size: 18px;
+		   	  text-decoration:underline;
+		   }
+	</style>
+</head>
+<body>
+         <p>css很强大<strong>可以控制页面<span>任何元素</span>的样式</strong></p>
+         <strong>1.与世界同,做一个页面仔</strong>
+         <strong>2.与世界同,做一个页面仔</strong>
+         <strong>3.与世界同,做一个页面仔</strong>
+         <strong>4.与世界同,做一个页面仔</strong>
+         <strong>5.与世界同,做一个页面仔</strong>
+</body>
+</html>
+<!-- 
+   相邻选择符与子选择符很相似,只是将其中的>换成了+,但功能上相差很远,其主要作用就是匹配同一个父级下某个元素之后的元素,例如,定义与p标签相邻的strong标签
+
+-->

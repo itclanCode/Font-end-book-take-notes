@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>选择符的权重值优先级别</title>
+	<style>
+		  p{
+		  	color:blue;
+		  }
+		  p.my-content{
+		  	color:black;
+		  }
+		  .my-color{
+		  	color:yellow;
+		  }
+		  #my-color{
+		  	color:red;
+		  }
+	</style>
+</head>
+<body>
+			<p>你猜我是什么颜色的,才对了有奖</p>
+			<p class="my-content" style="color:pink">你猜猜我是什么颜色的,猜对了有奖</p>
+			<p class="my-content" id="my-content">你猜我是什么颜色的,才对了有奖</p>
+			<p style="color:red" class="my-color" id="my-color">你猜猜我是什么颜色的</p>
+</body>
+</html>
+<!-- 
+    css样式表中给每个选择符都分配一个权重值,可以将网页定义的样式分为4:HTML,作者,用户,浏览器,HTML表示在HTML中使用的样式,作者表示css文件的编写者,用户与就是浏览器网页的用户所设置的样式,浏览器就是指浏览器的默认样式
+    为了让用户对样式有更多的控制能力,可以对属性设置!import关键字声明,提升属性的权重值,添加!important关键字声明的属性在优先级是最高的
+    1. 标有!important关键字的声明属性
+    2. HTML中的css样式属性
+    3. 作者编辑的css文件样式属性
+    4. 用户设置的样式
+    5. 浏览器默认的样式
+    在作者编辑的css文件样式中,以选择符的组合方式来决定优先级,相同的选择符组合方式将根据作者定义的css样式的先后次序而决定优先级别 
+    1. 标签选择符,伪类及伪对象:优先级积分为1
+    2. 类选择符,属性选择符:优先级积分为10
+    3. ID选择符:优先级积分为100
+    4. style属性:优先级积分为10000
+    5. 其他选择符,如通配符选择符:优先级积分为0
+    !important关键字声明后，其他所有选择符的属性都被覆盖了,可见其优先级是有多么高,因此对于!important关键字的使用一定要谨慎,不要随意使用
+
+
+ -->

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>子选择符</title>
+	<link rel="stylesheet" href="1.2.4子选择符.css">
+	<style>
+		  body > strong{
+		  	 color: #f0f0f0;
+			 font-size: 18px;
+			 text-decoration: underline;
+		  }
+	</style>
+</head>
+<body>
+	  <p><strong>可以控制页面<span>任何元素</span>的样式</strong></p>
+	  <strong>做一个牛逼的页面仔</strong>
+</body>
+</html>
+<!-- 
+    为什么在页面中第一个strong标签不会被定义样式呢,这就是子选择符的特殊性,第一个strong标签是与body标签的关系是body>p>strong，而不是body>strong
+
+ -->

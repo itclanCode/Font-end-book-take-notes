@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>伪类</title>
+	<style>
+		  a.link:link{
+			color:red;
+		  }
+		  a.visited:visited{
+		  	 color:blue;
+		  }
+		  a.hover:hover{
+		  	  color:red;
+		  }
+		  a.active:active{
+		  	 color:pink;
+		  }
+		  input:hover{
+		  	 background-color: #ff0000;
+		  }
+	</style>
+</head>
+<body>
+	   <a href="" class="link">1链接时的状态</a>
+	   <a href="" class="visited">2链接时访问过后的状态</a>
+	   <a href="" class="hover">3链接鼠标移过时的状态</a>
+	   <a href="" class="active">4链点击活跃的状态</a>
+
+	   <form action="" method="get">
+	   	     <input type="text" name="" id="">
+	   	     <input type="text" name="" id="">
+	   </form>
+</body>
+</html>
+<!-- 
+    伪类可以用来指定一个或者多个与其相关联的选择符的状态,伪类的形式为:选择符:伪类{属性:属性值},例如,以下为描点标签a的几种状态(默认状态,访问过后的状态,经过时的状态以及点击时的状态)
+
+ -->
