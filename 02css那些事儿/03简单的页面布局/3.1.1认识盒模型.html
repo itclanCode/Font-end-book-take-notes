@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>认识盒模型</title>
+	<style>
+		   div{
+		   	   width: 200px;
+		   	   height: 30px;
+		   	   padding: 20px;
+		   	   border: 5px solid #ff0000;
+		   	   margin-bottom: 10px;
+		   	   color: #fff;
+		   	   background-color: #000;
+		   	   border-bottom-width:0;
+		   }
+		   div+div{
+		   	   border-width: 10px 5px;
+		   }
+		   div+div+div{
+		   	   border-width: 0 5px 5px;
+		   }
+
+
+	</style>
+</head>
+<body>
+		<div>我是第1个div标签</div>
+		<div>我是第2个div标签</div>
+		<div>我是第3个div标签</div>
+</body>
+</html>

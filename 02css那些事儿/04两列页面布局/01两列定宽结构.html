@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>两列定宽结构</title>
+	<style>
+		 *{
+		 	padding: 0;
+		 	margin: 0;
+		  }
+		  #header,#footer{
+		  	width: 960px;
+		  	height: 30px;
+		  	background-color: #E8E8E8;
+		  }
+		  #container{
+		  	width: 960px;
+		  	/* height: 250px; */
+		  	margin: 10px 0;
+		  }
+		  #container:after{
+		  	content: '';
+		  	display:block;
+		  	visibility:hidden;
+		  	font-size: 0;
+		  	line-height: 0;
+		  	clear: both;
+		  }
+		  .main-box{
+		  	/*float: left;*/
+		  	float: right;
+		  	width: 680px;
+		  	/* height: 250px; */
+		  	color: #fff;
+		  	background-color: #333;
+		  }
+		  .slide-box{
+		  	/*float: right;*/
+		  	float: left
+		  	width: 270px;
+		  	/* height: 250px; */
+		  	color: #fff;
+		  	background-color: #999;
+		  }
+	      #footer{
+	      	 clear:both;
+	      }
+	</style>
+</head>
+<body>
+	<div id="header">头部信息</div>
+	<div id="container">
+		<div class="main-box">主要内容区域</div>
+		<div class="side-box">侧边栏</div>
+	</div>
+	<div id="footer">底部信息</div>
+</body>
+</html>
