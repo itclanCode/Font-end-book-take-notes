@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>会变色的按钮</title>
+	<style>
+		  body{
+		   	 text-align: center;
+
+		  }
+	</style>
+</head>
+<body>
+		<input type="button" value="按钮" id="btn">
+		<script>
+		         var oBody = document.getElementsByTagName("body")[0];
+			     // 初始化函数
+			     function init(){
+			     	var btn = document.getElementById("btn");  // 获取按钮的DOM
+			     	btn.onmouseover = function(){
+			     		this.style.backgroundColor="#15399D";
+			     	}
+                    btn.onmouseout = function(){           // 监听鼠标移出事件
+                    	this.style.backgroundColor = "";   // 恢复背景颜色
+                    }
+			     }
+			     oBody.onload = function(){
+			        init();
+			     }
+		</script>
+</body>
+</html>

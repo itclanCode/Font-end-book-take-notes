@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>带下划线的链接</title>
+	<style>
+		  a{
+		  	text-decoration:none;
+		  }
+	</style>
+</head>
+<body>
+	  <!-- 定义链接 -->
+	  <a href="#">链接一</a><br /><br />
+	  <a href="#">链接二</a><br /><br />
+	  <!-- 定义按钮 -->
+	  <input type="button" value="为链接加上下划线" id="myBtn" onclick="addLine()">
+
+	  <script>
+	  	       // 为链接加上下划线
+	  	       function addLine(){
+	  	       	   // 获取所有的链接的DOM
+	  	       	   var linkDOMS = document.getElementsByTagName("a");
+	  	       	   for(var i = 0;i<linkDOMS.length;i++){   // 遍历
+                         var link = linkDOMS[i];     // 当前的链接DOM
+                         link.style.textDecoration = "underline";  
+	  	       	   }
+	  	       }
+	  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册按钮倒计时效果</title>
+	<style>
+		   body{
+		   	  text-align: center;
+
+		   }
+	</style>
+</head>
+<body >
+		<p>请认证阅读本协议</p>
+		<input type="button" value="注册(10)" disabled id="btn">
+
+		<script>
+			    var sec = 10; // 倒计时10秒
+			    var oBody = document.getElementsByTagName("body")[0];
+			    oBody.onload = function(){
+			    	init();
+			    }
+			    function init(){
+			    	timer = setInterval(function(){
+                         // 获取注册按钮的DOM
+                         var btn = document.getElementById("btn");
+                         sec--;
+                         btn.value = '注册('+sec+')'; // 按钮文本
+                         if(sec == 0){
+                            clearInterval(timer);  // 清除定时器
+                            btn.disabled = false;  // 恢复可用
+                            btn.value="注册";      // 设置按钮文本
+                         }
+			    	},1000)
+			    }
+
+		</script>
+</body>
+</html>

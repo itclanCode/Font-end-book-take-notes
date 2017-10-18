@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变链接的单击事件</title>
+</head>
+<body style="text-align:center">
+	   <!-- 定义链接  -->
+	   <a href="#" id="myLink">一个链接</a>
+
+	   <script>
+
+	          var  oBody = document.getElementsByTagName("body")[0];
+	          oBody.onload = function(){
+	          	 defineLinkClick();
+	          }
+	   	      // 自定义click事件
+	   	      function defineLinkClick(){
+	   	      	  // 获得链接的DOM
+	   	      	  var mylink = document.getElementById("myLink");
+	   	      	  myLink.onclick = function(){  // 定义click事件
+                       alert("链接被单击了");   // 事件的内容逻辑
+                       return false;
+	   	      	  }
+	   	      }
+	   </script>
+</body>
+</html>
