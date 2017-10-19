@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>让所有的链接都在新窗口中打开</title>
+	<style>
+		body{
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+	   <!-- 定义链接 -->
+	   <a href="#">链接一</a><br /><br />
+	   <a href="#">链接二</a>
+	   <!-- 定义按钮 -->
+	   <input type="button" name="" value="修改打开方式" id="myBtn">
+
+	   <script>
+	   	        // 动态修改链接打开类型
+	   	        function modifyOpenType(){
+	   	        	// 获取到所有的链接DOM
+	   	        	var linkDOMS = document.getElementsByTagName("a");
+	   	        	for(var i = 0;i<linkDOMS.length;i++){
+                         var link = linkDOMS[i];    // 当前的丽娜姐DOM
+                         link.target = "_blank";    // 在新窗口中打开
+	   	        	}
+	   	        }
+	   </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>成为焦点时清除文本的内容</title>
+</head>
+<body style="text-align:center">
+	   <!-- 定义文本框,监听onfocus事件 -->
+	   请输入:<input type="text"  value="" onfocus="clearContent(this)" name=""><br /><br />
+	   <!-- 定义按钮 -->
+	   <input type="button" value="按钮" id="myBtn" onclick ="sumInput()" name="">
+
+	   <script>
+	   	          // 清除内容
+	   	          function clearContent(myText){
+                     myText.value = ""; // 把文本内容的值设为空字符
+	   	          }
+	   </script>
+</body>
+</html>

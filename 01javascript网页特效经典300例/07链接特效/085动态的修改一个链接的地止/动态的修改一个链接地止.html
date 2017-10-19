@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态的修改一个链接地止</title>
+	<style>
+	    body{
+			text-align: center;
+	    }
+		a{
+			text-decoration:none;
+		}
+	</style>
+</head>
+<body>
+	   <!-- 定义链接 -->
+	   <a href="#" id="myLink">一个链接</a><br /><br />
+	   <input type="button" value="修改链接地止" id="myBtn" name="" onclick ="modifyURL()">
+
+	   <script>
+
+	   	        function modifyURL(){
+	   	        	var myLink = document.getElementById("myLink"); // 获取丽娜姐的DOM
+	   	        	myLink.href = "http://www.baidu.com"; // 修改链接地止
+	   	        }
+	   </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>用正则表达式验证Email格式</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript">			
+			//格式校验
+			function validateInput(){
+				//获得文本框的DOM
+				var myText = document.getElementById("myText");
+				var email = myText.value;				//获得用户输入的Email
+				//定义正则表达式
+				var emailReg 
+					= /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+				if(emailReg.test(email)){				//判断是否符合格式要求
+					alert("校验通过，允许提交");		//通过
+				}else{
+					alert("校验失败，请检查重新输入");	//验证失败
+				}
+			}
+		</script>
+	</head>
+	<body style="text-align:center;" >
+		<!-- 定义文本框 -->
+		请输入Email：<input type="text" value="" id="myText" /><br /><br />
+		<!-- 定义按钮 -->
+		<input type="button" value="提交检验" id="myBtn" onclick="validateInput();"/>
+	</body>
+</html>

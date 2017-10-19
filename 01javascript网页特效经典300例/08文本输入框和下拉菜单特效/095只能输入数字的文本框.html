@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>只能输入数字的文本框</title>
+</head>
+<body>
+	    <!-- 定义文本框 -->
+	    请输入:<input type="text" value="" id="myText" name=""><br /><br />
+	    <!-- 定义按钮 -->
+	    <input type="button" value="提交检验" id="myBtn" onclick="validateInput()" name="">
+	    <script>
+	    	    // 格式教研
+	    	    function validateInput(){
+	    	    	// 获得文本框的DOM
+	    	    	var myText = document.getElementById("myText");
+	    	    	var val = myText.value;   // 获取用户输入的值
+	    	    	if(!/\b[0-9]+\b/.test(val)){
+                       alert("只能输入数字");   // 提示错误的信息
+	    	    	}
+	    	    }
+	    </script>
+</body>
+</html>

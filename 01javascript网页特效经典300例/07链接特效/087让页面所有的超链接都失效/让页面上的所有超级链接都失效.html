@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>让页面所有的超级链接都失效</title>
+	<style>
+		 body{
+		 	text-align:center;
+		 }
+
+	</style>
+</head>
+<body>
+	  <!-- 定义链接 -->
+	  <a href="#">链接一</a><br /><br />
+	  <a href="#">链接二</a><br /><br />
+
+	  <!-- 定义按钮 -->
+	  <input type="button" value="失效" id="myBtn" onclick="invaildLinks()">
+	  <script>
+	  	    // 让页面上所有的超级链接都失效
+	  	    function invaildLinks(){
+	  	    	// 得到所有链接的DOM
+	  	    	var linkDOMS = document.getElementsByTagName("a");
+	  	    	for(var i = 0;i<linkDOMS.length;i++){
+                    var link = linkDOMS[i];
+                    link.onclick = null;
+                    link.href = "javascript:void(0)"; // 地止改成什么都不做
+	  	    	}
+	  	    }
+	  </script>
+</body>
+</html>

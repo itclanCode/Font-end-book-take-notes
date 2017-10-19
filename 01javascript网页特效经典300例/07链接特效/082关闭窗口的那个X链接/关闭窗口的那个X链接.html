@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>关闭那窗口的那个X链接</title>
+	<style>
+		  body{
+		  	text-align:center;
+		  }
+	</style>
+</head>
+<body>
+		<!-- 定义X链接 -->
+		单击&nbsp;<a href="#" id="myLink">X</a>&nbsp;关闭窗口
+
+		<script>
+		        var oBody = document.getElementsByTagName("body")[0];
+		        oBody.onload = function(){
+		        	defineLinkClick();
+		        }
+			   // 自定义click事件
+			   function defineLinkClick(){
+			   	   var myLink = document.getElementById("myLink");  // 获得链接的DOM
+			   	   myLink.onclick = function(){
+			   	   	    window.close();  // 关闭窗口
+			   	   	    return false;    // 返回
+			   	   }
+			   }
+		</script>
+</body>
+</html>

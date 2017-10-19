@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>判断汉字的个数</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript">			
+			//进行格式校验
+			function sumInput(){
+				//获得文本框的DOM
+				var myText = document.getElementById("myText");
+				var val = myText.value;			//获取用户输入的值
+				var sum = 0;					//定义汉字个数
+				for(var i=0;i<val.length;i++){		//遍历
+					var c = val.charAt(i);			//得到当前的字符
+					if(isChineseChar(c)){			//汉字判断
+						sum++;				//个数自加
+					}
+				}
+				alert("包含汉字个数：" + sum);		//用提示框展示结果
+			}
+			//汉字校验函数
+			function isChineseChar(c){
+				var reg = /[\u4E00-\u9FA5]/;		//定义正则表达式
+				return reg.test(c);				//返回判断结果
+			}
+		</script>
+	</head>
+	<body style="text-align:center;">
+		<!-- 定义文本框 -->
+		请输入：<input type="text" value="" id="myText" /><br /><br />
+		<!-- 定义按钮 -->
+		<input type="button" value="判断汉字的个数" id="myBtn" onclick="sumInput();"/>
+	</body>
+</html>
