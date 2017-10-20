@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态为下拉菜单设置项目</title>
+</head>
+<body style="text-align:center">
+	   <!-- 定义下拉菜单 -->
+	   请选择:<select id="mySelect"></select><br /><br />
+	   <!-- 定义按钮 -->
+	   <input type="button" value="填充下拉项目" id="myBtn" onclick="fillOptions()" name="">
+
+	   <script>
+	   	        // 动态设置下拉菜单项目
+	   	        function fillOptions(){
+	   	        	// 获取下拉菜单的DOM
+	   	        	var mySel = document.getElementById("mySelect");
+	   	        	mySel.innerHTML = "";    // 先把原有的内容置空
+	   	        	var str = "";            // 内容的字符拼接
+	   	        	for(var i = 0;i<=12;i++){
+                        // 拼接内容，以月份为内容
+                        str += "<option value="+i+">"+i+"月</option>"
+	   	        	}
+	   	        	mySel.innerHTML = str;   // 挂接内容选项
+
+	   	        }
+	   </script>
+</body>
+</html>

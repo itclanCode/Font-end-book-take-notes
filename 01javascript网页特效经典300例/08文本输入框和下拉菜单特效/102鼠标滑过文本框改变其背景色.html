@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标滑过文本框改变其背景色</title>
+</head>
+<body style="text-align:center" onload="init()">
+	   <!-- 定义文本框 -->
+	   <input type="text"><br />
+	   <input type="text">
+
+	   <script>
+	   	          // 初始化函数
+	   	          function init(){
+	   	          	// 获取所有的文本DOM
+	   	          	var texts = document.getElementsByTagName("input");
+	   	          	// 遍历所有的文本框
+	   	          	for(var i = 0;i<texts.length;i++){
+                        var t = texts[i];  // 当前文本框
+                        t.onmouseover = function(){
+                        	// 修改背景色为红色
+                        	this.style.backgroundColor = "red";
+                        }
+                        t.onmouseout = function(){
+                        	this.style.backgroundColor = ""; // 恢复背景色
+                        }
+	   	          	}
+	   	          }
+	   </script>
+</body>
+</html>

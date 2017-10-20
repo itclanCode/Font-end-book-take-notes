@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>输入文字时文本框边框闪烁</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript">			
+			//初始化函数
+			function init(){
+				//获取所有的文本DOM				
+				var texts = document.getElementsByTagName('input');
+				//遍历所有的文本框
+				for(var i=0;i<texts.length;i++){
+					var t = texts[i];//当前文本框
+					//监听聚焦事件
+					t.onfocus = function(){
+						var e = this;//保留当前DOM的引用
+						//开始闪烁的定时器
+						timer = setInterval(function(){
+							//获取当前的边框颜色变量
+							var c = e.style.borderColor;
+							if(c == 'yellow'){//如果是黄色
+								e.style.borderColor = '';//恢复原色
+							}else{//否则，边框变成黄色
+								e.style.borderColor = 'yellow';
+							}
+						},1000);//每1秒闪烁一次
+					};
+					t.onblur = function(){//监听离开事件
+						//恢复边框颜色
+						this.style.borderColor = '';
+						clearInterval(timer);//清除定时器
+					}
+				}
+			}
+		</script>
+	</head>
+	<body style="text-align:center;" onload="init();">
+		<!-- 定义文本框 -->
+		<input type="text" />
+		<input type="text" />
+	</body>
+</html>
