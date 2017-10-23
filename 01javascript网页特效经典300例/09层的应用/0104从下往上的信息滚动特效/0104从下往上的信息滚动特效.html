@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>从下往上的信息滚动特效</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">		
+			var timer = null;				//定时器
+			//页面加载完成的事件回调
+			function init(){
+				var time = 30;				//定义滚动的时间间隔，毫秒
+				//获取容器的DOM
+				var container = document.getElementById('container');
+				var d1 = document.getElementById('con1');
+				var d2 = document.getElementById('con2');
+				d2.innerHTML = d1.innerHTML	//把第二个容器的内容填充为第一个
+				function MyMarquee(){			//定义滚动的函数
+					//如果d2的高度已经超过最大的限制
+					if(d2.offsetHeight <= container.scrollTop)
+						//把容器的滚动条恢复到最初的位置
+						container.scrollTop -= d1.offsetHeight;
+					else{
+						//滚动条的位置往top移动一个像素
+						container.scrollTop++;
+					}
+				}
+				timer = setInterval(MyMarquee,time);//开始一个定时执行
+				container.onmouseover=function() {	//定义鼠标放上事件
+					clearInterval(timer);			//结束滚动
+				}
+				container.onmouseout=function() {	//定义鼠标移出事件
+					timer=setInterval(MyMarquee,time);//再次开始
+				}
+			}			
+		</script>	
+	</head>
+	<body style="text-align:center" onload="init();">
+		<div id="container" style="overflow:hidden;height:100px;">
+			<table align="left" cellpadding="0" cellspace="0" border="0">
+				<tr>
+					<td id="con1" valign="top">
+					<img src="1.jpg"><img src="1.jpg"><img src="1.jpg">
+					</td>
+				</tr>
+				<tr>
+					<td id="con2" valign="top"></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

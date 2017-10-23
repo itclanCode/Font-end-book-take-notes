@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>新闻切换特效</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">		
+		var currIndex = 1;
+		function init(){
+			var length = 5;
+			for(var i = 0; i < length; i++)
+			{
+				document.getElementById('slideshow_footbar').innerHTML += '<div class="slideshow-bt" index="'+(length-i)+'"></div>';
+			}
+			var btns = document.getElementsByClassName('slideshow-bt');
+			btns[length-1].className += ' bt-on';
+			for(var i=0;i<btns.length;i++){
+				btns[i].onclick=function(){
+					slideTo(this.attributes['index'].value);
+				};
+			}
+			setInterval(function(){		
+				if(currIndex + 1 > 5)
+					currIndex = 0;
+				slideTo(currIndex + 1);
+			},3000);
+		}
+		function slideTo(index){
+			index = parseInt(index);
+			var picArr = document.getElementById('slideshow_photo').childNodes;
+			for(var i=0;i<picArr.length;i++){		
+				if(picArr[i].attributes 
+					&& picArr[i].attributes['index'] 
+					&& parseInt(picArr[i].attributes['index'].value)==index){
+					picArr[i].style.zIndex = 2;
+					currIndex = index;
+				}else if(picArr[i].attributes 
+					&& picArr[i].attributes['index']){
+					picArr[i].style.zIndex = 1;
+				}
+			}
+			var btns = document.getElementsByClassName('slideshow-bt');
+			for(var i=0;i<btns.length;i++){
+				if(parseInt(btns[i].attributes['index'].value) == index){
+					btns[i].className = 'slideshow-bt bt-on';
+				}else{
+					btns[i].className = 'slideshow-bt';
+				}
+			}
+		}
+		</script>	
+		<style>
+#slideshow_wrapper {
+	POSITION: relative;
+	PADDING-BOTTOM: 0px;
+	BACKGROUND-COLOR: #121212;
+	PADDING-LEFT: 0px;
+	WIDTH: 650px;
+	PADDING-RIGHT: 0px;
+	HEIGHT: 400px;
+	OVERFLOW: hidden;
+	PADDING-TOP: 0px
+}
+#slideshow_footbar {
+	Z-INDEX: 5;
+	POSITION: absolute;
+	FILTER: alpha(opacity=50);
+	WIDTH: 100%;
+	BOTTOM: 0px;
+	HEIGHT: 30px;
+	background-color: black;
+	opacity:0.5;
+}
+#slideshow_photo {
+	POSITION: absolute;
+	WIDTH: 100%;
+	HEIGHT: 100%;
+	CURSOR: pointer
+}
+#slideshow_photo A {
+	Z-INDEX: 1;
+	BORDER-BOTTOM: 0px;
+	POSITION: absolute;
+	BORDER-LEFT: 0px;
+	MARGIN: 0px;
+	DISPLAY: block;
+	BORDER-TOP: 0px;
+	TOP: 0px;
+	BORDER-RIGHT: 0px;
+	LEFT: 0px
+}
+#slideshow_footbar .slideshow-bt {
+	BACKGROUND-COLOR: #d2d3d4;
+	MARGIN: 10px 10px 0px 0px;
+	WIDTH: 10px;
+	DISPLAY: inline;
+	FLOAT: right;
+	HEIGHT: 10px;
+	FONT-SIZE: 0px
+}
+#slideshow_footbar .bt-on {
+	BACKGROUND-COLOR: #30b1eb
+}
+		</style>
+	</head>
+	<body style="text-align:center" onload="init();">
+		<DIV id="slideshow_wrapper">
+			<DIV id="slideshow_photo">
+				<A target="_blank" style="Z-INDEX: 2" href="#" index="1"><IMG border=0 src="2.jpg"></A>
+				<A target="_blank" style="Z-INDEX: 1" href="#" index="2"><IMG border=0 src="3.jpg"></A>
+				<A target="_blank" style="Z-INDEX: 1" href="#" index="3"><IMG border=0 src="3.jpg"></A>
+				<A target="_blank" style="Z-INDEX: 1" href="#" index="4"><IMG border=0 src="3.jpg"></A>
+				<A target="_blank" style="Z-INDEX: 1" href="#" index="5"><IMG border=0 src="3.jpg"></A>
+			</DIV>
+			<DIV id="slideshow_footbar"></DIV>
+		</DIV>
+	</body>
+</html>

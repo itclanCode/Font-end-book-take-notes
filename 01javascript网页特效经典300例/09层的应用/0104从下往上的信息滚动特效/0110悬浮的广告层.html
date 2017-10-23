@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>悬浮的广告层</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">		
+			function goScroll(o){
+				var space=document.getElementById(o).offsetTop;
+				document.getElementById(o).style.top=space+'px';
+				var goTo = 0;
+				window.setInterval(function(){
+					var height =document.documentElement.scrollTop+document.body.scrollTop+space;
+					var top = parseInt(document.getElementById(o).style.top);
+					if(height!= top){
+						goTo = height-parseInt((height - top)*0.9);
+						document.getElementById(o).style.top=goTo+'px';
+					}
+				},50);
+			}
+			function init(){
+				goScroll('con1');
+			}
+		</script>	
+		<style>
+			#con1{				
+				background-color:gray;				
+				left: 0px;
+				top: 100px;
+				width:100px;
+				height:100px;
+				position: absolute;
+				z-index = 1;
+			}
+		</style>
+	</head>
+	<body style="text-align:center" onload="init();">
+		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+		<div id="con1">
+			这是一个广告
+		</div>
+		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	</body>
+</html>
