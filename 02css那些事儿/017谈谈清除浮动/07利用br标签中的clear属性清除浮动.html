@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>因浮动产生错位的现象</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+	  .float-left{
+	  	float: left;
+	  	width: 200px;
+	  	height: 100px;
+	  	border:2px solid #ff0000;
+	  }
+	  .float-right{
+	  	 float: right;
+	  	 width: 200px;
+	  	 height: 100px;
+	  	 border:2px solid #0000ff;
+	  }
+	  .float-box{
+	  	background-color: #aaa;
+	  }
+	  .no-float{
+	  	color: #fff;
+	  	background-color: #000;
+	  	text-align: center;
+	  }
+
+
+
+</style>
+</head>
+<body>
+       <div class="float-box">
+	       	<div class="float-left">左浮动元素</div>
+	       	<div class="float-right">右浮动元素</div>
+       </div>
+       <br clear="all" />   <!-- 虽然通过该标签将浮动清除了,但是它并未发现类名为float-box的div标签中有北京颜色,将浮动元素的浮动特性清除了,但清除的仅仅是左右浮动元素特性,并未将类名为float-box的div标签浮动特性完全清除-->
+       <div class="no-float">测试因为浮动导致该容器所处的位置</div>
+</body>
+</html>

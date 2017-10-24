@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>因浮动产生错位的现象</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+	  .float-left{
+	  	float: left;
+	  	width: 200px;
+	  	height: 100px;
+	  	border:2px solid #ff0000;
+	  }
+	  .float-right{
+	  	 float: right;
+	  	 width: 200px;
+	  	 height: 100px;
+	  	 border:2px solid #0000ff;
+	  }
+	  .float-box{
+	  	background-color: #aaa;
+	  	zoom:1; /* 主要是针对Ie67中haslayout问题 兼容性*/
+	  }
+	  .no-float{
+	  	color: #fff;
+	  	background-color: #000;
+	  	text-align: center;
+	  }
+	  .clear-float{
+	  	 clear:both;  /* 清除相邻于娜苏的浮动效果 */
+	  }	
+
+
+</style>
+</head>
+<body>
+       <div class="float-box">
+	       	<div class="float-left">左浮动元素</div>
+	       	<div class="float-right">右浮动元素</div>
+	       	<br class="clear-float" /> <!-- br标签放在里面-->
+       </div>
+       
+       <div class="no-float">测试因为浮动导致该容器所处的位置</div>
+</body>
+</html>
+<!-- 
+    使用css样式中的clear属性与xhtml代码中的br标签的clear属性的最终清除浮动的效果是一阿姨给的,唯一的不同是代码出现的位置不同,两者相比,css样式中的clear属性的调用方式比xhtml代码中的br标签的clear属性药灵活得多
+
+    web标准页面中重构制作这块的最基本要求就有xhtml结构与css样式的分离,页面表现效果只需通过css样式的调整即可完成,基于这点,建议多使用css样式中的clear属性,而不要在xhtml结构中添加一个无内容的空标签作为清除浮动的依据(即使br标签也是如此)
+	在css样式中更理想的利用clear属性方式也并非是多增加一个类名,我们可以直接在相邻的元素中增加clear属性清除浮动
+
+ -->
