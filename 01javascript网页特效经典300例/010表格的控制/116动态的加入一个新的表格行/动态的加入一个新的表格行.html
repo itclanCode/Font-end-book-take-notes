@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>动态的加入一个新的表格行</title>
+</head>
+
+<body style="text-align:center">
+    <p>
+        <input type="button" value="加一行">
+    </p>
+    <table id="tb1" align="center" border="1">
+        <tr>
+			<td>col1</td>
+            <td>col1</td>
+        </tr>
+    </table>
+    <script>
+             var oBtn = document.getElementsByTagName("input")[0];
+             oBtn.onclick = function(){
+             	addRow();
+             }
+    	     function addRow(){  // 为表格加一行函数
+                  var tb1 = document.querySelector("#tb1");
+                  // 使用innerHTML加一个表格行
+                  tb1.innerHTML +="<tr><td>col1</td><td>col2</td></tr>"
+    	     }
+    </script>
+</body>
+
+</html>

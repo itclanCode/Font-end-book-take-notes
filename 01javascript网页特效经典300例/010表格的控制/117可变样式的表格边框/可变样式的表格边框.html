@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>可变样式的表格边框</title>
+</head>
+<body style="text-align:center">
+	  <table id="tb1" align="center" border="1">
+	  	<tr>
+	  		<td>名字</td>
+	  		<td>年龄</td>
+	  	</tr>
+	  	<tr>
+	  		<td>A</td>
+	  		<td>12</td>
+	  	</tr>
+	  	<tr>
+	  		<td>B</td>
+	  		<td>11</td>
+	  	</tr>
+	  	<tr>
+	  		<td>C</td>
+	  		<td>15</td>
+	  	</tr>
+	  </table>
+
+	  <script>
+	          var tb1= document.getElementById("tb1");
+
+	  	      function chBorder(c){
+	  	      	  tb1.style.border = "1px solid"+c;   // 动态的修改表格边边框框
+	  	      }
+	  	      tb1.onmouseover = function(){
+	  	      	chBorder("#f00");
+	  	      }
+	  	      tb1.onmouseout = function(){
+	  	      	chBorder("#abcdef");
+	  	      }
+	  </script>
+</body>
+</html>
