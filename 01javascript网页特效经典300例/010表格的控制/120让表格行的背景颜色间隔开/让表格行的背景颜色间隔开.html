@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>让表格行的背景颜色间隔开</title>
+</head>
+<body style="text-align:center" onload ="chCell()">
+	    <table id="tb1" align="center" border="1">
+	    	<tr>
+	    		<th>名字</th>
+	    		<th>年龄</th>
+	    	</tr>
+	    	<tr>
+	    		<th>A</th>
+	    		<th>12</th>
+	    	</tr>
+	    	<tr>
+	    		<th>B</th>
+	    		<th>13</th>
+	    	</tr>
+	    	<tr>
+	    		<th>C</th>
+	    		<th>14</th>
+	    	</tr>
+	    </table>
+	    <script>
+			     function chCell(){
+			     	 var tb1 = document.getElementById("tb1");  // 获取DOM
+			     	 var rows = tb1.rows;  // 得到当前表格的row数组
+			     	 var len = tb1.rows.length;  // 当前的行数
+			     	 for(var i = 0;i<len;i++){   // 遍历所有行
+                        var r =  rows[i];        // 当前行
+                        r.onmouseover = function(){
+                        	// 把背景色变成粉红色
+                        	this.style.backgroundColor = "pink";
+                        }
+                        r.onmouseout = function(){
+                        	// 把背景色变回白色
+                        	this.style.backgroundColor = "";
+                        }
+			     	 }
+			     }	    	      
+	    </script>
+</body>
+</html>
