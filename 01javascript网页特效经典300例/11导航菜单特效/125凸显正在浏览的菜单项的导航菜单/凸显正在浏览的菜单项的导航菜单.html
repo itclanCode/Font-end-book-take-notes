@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>凸顯正在瀏覽的菜單項的導航菜單</title>
+    <style>
+    .menu {
+        list-style: none;
+        width: 400px;
+        margin: 10px auto;
+    }
+
+    .menu li {
+        float: left;
+        width: 98px;
+        border: 1px solid #000;
+    }
+
+    .menu a {
+        color: #000;
+        width: 100%;
+        display: inline-block;
+    }
+
+    .menu a:hover {
+        background-color: #f00;
+    }
+
+    .curr {
+        background-color: pink;
+    }
+    </style>
+</head>
+<body style="text-align:center;" onload="init()">
+    <ul class="menu" id="menu">
+        <li><a href="#">菜单1</a></li>
+        <li><a href="#">菜单2</a></li>
+        <li><a href="#">菜单4</a></li>
+        <li><a href="#">菜单3</a></li>
+    </ul>
+    <script>
+    var currIndex = 1; // 正在瀏覽的菜單項下標
+    function init() { // 網頁加載完成事件函數
+        // 得到菜單DOM
+        var menu = document.getElementById("menu");
+        // 遍歷所有的菜單項
+        var items = menu.children;
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i]; // 得到當前的菜單項
+            // 如果遍歷到正在瀏覽的菜單項,就添加樣式
+            if (i == currIndex) {
+                item.className = 'curr';
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>
