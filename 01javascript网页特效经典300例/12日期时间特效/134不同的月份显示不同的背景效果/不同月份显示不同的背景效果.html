@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>不同月份显示不同的背景效果</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	  <p>这是一段文本</p>
+
+	  <script>
+	         var oBody = document.getElementsByTagName("body")[0];
+	         oBody.onload = function(){
+	         	chColor();
+	         }
+	  	     function chColor(){  // 开始判断月份的函数
+                var date = new Date();  // 得到当前的时间
+                var m = date.getMonth()+1; // 得到月份数
+                if(m%2 == 0){
+                    // 如果是偶数,则为蓝色
+                    document.body.style.backgroundColor = "blue";
+                }else{
+                	document.body.style.backgroundColor = "yellow"
+                	oBody.innerHTML += m;
+                }
+	  	     }
+	  </script>
+</body>
+</html>

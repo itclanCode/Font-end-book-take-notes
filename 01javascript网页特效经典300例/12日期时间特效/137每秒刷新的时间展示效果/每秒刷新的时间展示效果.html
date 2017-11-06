@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>每秒刷新的时间展示效果</title>
+    <style>
+    	  *{
+    	  	padding: 0;
+    	  	margin: 0;
+    	  }
+    	  body{
+    	  	text-align: center;
+    	  }
+    </style>
+</head>
+<body>
+	  <p><input type="button" value="当前时间" onclick="start()"></p>
+       <h2 id="left"></h2>
+	  <script>
+	  	    function start(){  // 开始函数
+                setInterval(function(){
+                    var now = new Date();  // 当前时间
+                    var str = "";
+                    str += now.getYear()+1900+'年';   // 年
+                    str += now.getMonth()+1+'月'; // 月
+                    str += now.getDate()+'日';   // 日
+                    str += now.getHours()+'时';  // 时
+                    str += now.getMinutes()+'分'; // 分
+                    str += now.getSeconds()+'秒'; // 秒
+                    document.getElementById('left').innerHTML= str;
+                },1000)
+	  	    }
+	  </script>
+</body>
+</html>

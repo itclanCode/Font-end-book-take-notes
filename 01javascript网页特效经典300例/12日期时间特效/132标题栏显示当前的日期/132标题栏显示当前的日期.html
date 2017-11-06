@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!--[if IE]>
+	<![endif]-->
+	<!--[if !IE]><!-->
+	<!--<![endif]-->
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">		
+	<title>标题显示当前的日期</title>
+</head>
+<body style="text-align: center;" id="body">
+	  <p><input type="button" value="修改标题" onclick="start()"></p>
+
+	  <script>
+	  	  // 修改标题的函数
+	  	  function start(){
+	  	  	 var data = new Date();   // 得到当前的时间
+	  	  	 document.title = data.toString(); // 把事件字符形式展示在网页的标题上
+	  	  	 document.getElementsByTagName("body")[0].innerHTML +=  document.title;
+	  	  }
+	  </script>
+</body>
+</html>
