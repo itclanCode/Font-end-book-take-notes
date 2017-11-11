@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>使用定时器</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		
+	</head>
+	<body style="text-align:center">
+		<p>
+			<input type="button" value="开始定时" onclick="start();"/>
+		</p>
+		<h2 id="the_sec"></h2>
+
+		<script type="text/javascript">		
+			//开始定时的函数
+			function start(){			
+				//使用setInterval函数进行定时
+				window.setInterval(function(){
+					//得到当前的时间对象
+					var date = new Date();
+					var str = '';		//定义拼接的字符变量
+					//得到小时数
+					str += date.getHours();
+					str += ':';			//拼接冒号
+					//得到分钟数
+					str += date.getMinutes();
+					str += ':';			//拼接冒号
+					//得到秒数
+					str += date.getSeconds();
+					//把结果显示出来
+					document.getElementById('the_sec').innerHTML = str;
+				}, 1000);//间隔为1秒
+			}
+		</script>	
+	</body>
+</html>
