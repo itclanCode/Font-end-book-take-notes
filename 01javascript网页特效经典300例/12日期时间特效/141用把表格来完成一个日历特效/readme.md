@@ -1,0 +1,100 @@
+### 用表格来完成一个日历特效
+### 实例描述
+用表格来实现一个日历特效是一种常见的网页日期特效
+
+### 实现代码
+```
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>用表格来完成一个日历特效</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body style="text-align:center" onload="init();">
+    <p>
+        点击选择日期
+    </p>
+    <p>
+        <select id="y"></select>年
+        <select id="m"></select>月
+    </p>
+    <table id="tbl" border="1" align="center"></table>
+    <script type="text/javascript">
+    function init() {                           // 初始化函数
+        var y = document.getElementById('y');   // 年份的DOM
+        var m = document.getElementById('m');   // 月份的DOM
+        var str = '';                           // 拼接字符
+        for (var i = 1900; i < 2050; i++) {     // 为年份的下拉列表框指定可选项
+            str += '<option value="' + i + '">' + i + '</option>'; 
+        }
+        y.innerHTML = str;                      // 动态的指定下拉列表框指定可选项
+        str = '';
+        for (var i = 1; i <= 12; i++) {         // 12个月,填充到月份
+            str += '<option value="' + i + '">' + i + '</option>';
+        }
+        m.innerHTML = str;
+        m.onchange = function() {               // 月份修改的监听
+            var year = document.getElementById('y').value;
+            year = parseInt(year);              // 解析为数字型的变量
+            var month = parseInt(this.value);   // 
+            var days = 30;                      // 默认为30天
+            if (isRunNian(year) && month == 2) { // 如果是闰年的2月
+                days = 29;                       // 129
+            } else if (!isRunNian(year) && month == 2) { 
+                days = 28;
+            } else if (month == 1 ||
+                month == 3 ||
+                month == 5 ||
+                month == 7 ||
+                month == 8 ||
+                month == 10 ||
+                month == 12) {
+                days = 31;                     // 其他月份为31天
+            }
+            var str = '<tr>';                 // 开始拼接日子的表头,为星期
+            for (var i = 1; i <= 7; i++) {   // 循环7次
+                str += '<td>星期' + i + '</td>';  // 如果星期对上了,则打印1号以后的
+            }
+            str += '</tr>';
+
+            var date = new Date(year, month - 1, 1);
+            var week = date.getDay();
+            var j = 1;
+            while (true) {
+                str += '<tr>';
+                for (var i = 1; i <= 7; i++) {
+                    if (j == 1 && i == week) {
+                        str += '<td onclick="showDay(' + j + ');">1</td>';
+                        j++;
+                    } else if (j > 1 && j <= days) {
+                        str += '<td onclick="showDay(' + j + ');">' + j + '</td>';
+                        j++;
+                    } else
+                        str += '<td>&nbsp;</td>';
+                }
+                str += '</tr>';
+                if (j >= days)
+                    break;
+            }
+            document.getElementById('tbl').innerHTML = str;
+        };
+    }
+
+    function isRunNian(y) {     // 闰年的判断函数
+        return y % 4 == 0;
+    }
+
+    function showDay(d) {     // 显示日期,监听单元格的click的事件
+        var y = document.getElementById('y').value;
+        var m = document.getElementById('m').value;
+        alert('您选择的日期是：' + y + '年' + m + '月' + d + '日');
+    }
+    </script>
+</body>
+
+</html>
+```
+### 实例效果
+![用表格来完成一个日历特效](img/)

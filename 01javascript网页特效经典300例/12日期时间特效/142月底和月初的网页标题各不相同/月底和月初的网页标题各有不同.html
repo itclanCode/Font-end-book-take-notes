@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>月底和月初的网页标题各不相同</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<style>
+			  body{
+			  	text-align: center;
+			  }
+		</style>
+	</head>
+	<body  onload="start()">
+		<p>
+			请注意看网页标题
+		</p>
+
+		<script type="text/javascript">		
+			//修改标题的函数
+			function start(){	
+				var date = new Date();
+				var str = '';
+				var m = date.getMonth();
+				if(m < 15)
+					str = '月初，要做好这个月的计划和安排哟';
+				if(m >= 15)
+					str = '这个月已经过去超过一半了，请珍惜时间';
+				document.title = str;
+				document.getElementsByTagName("body")[0].innerHTML += str;
+			}
+		</script>	
+	</body>
+</html>
