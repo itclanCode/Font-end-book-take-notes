@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>让样式动起来</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<!-- 定义一个外部样式，和引入外部css文件效果一样 -->
+		<style>
+			.myclass{
+				color:blue;
+			}
+		</style>
+		
+	</head>
+	<body style="text-align:center">	
+		<span id="mytxt" class="myclass">测试文本</span>
+		<br/>
+		<input type="button" onclick="changeStyle();" value="改变文本的颜色"/>
+
+		<script type="text/javascript">
+			//按钮的click事件监听函数
+			function changeStyle(){
+				//通过js得到文本所使用的样式表，
+				//因为只有一个，所以这里只需要访问第一个样式表
+				var rs = document.styleSheets[0].cssRules;
+				if(!rs)//有的浏览器不支持cssRules，需要用rules来得到
+					document.styleSheets[0].rules;
+				//改变第一条规则的颜色样式
+				rs[0].style.color = 'pink';
+			}
+		</script>
+	</body>
+</html>

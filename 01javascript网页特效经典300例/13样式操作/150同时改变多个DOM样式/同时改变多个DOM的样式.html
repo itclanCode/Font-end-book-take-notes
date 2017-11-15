@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>同时改变多个DOM的样式</title>
+	<style>
+		 .content{
+		 	font-style: 14px;
+		 }
+	</style>
+</head>
+<body style="text-align:center">
+	   <p class="content">这里是第1段</p>
+	   <p class="content">这里是第2段</p>
+	   <p class="content">这里是第3段</p>
+	   <br>
+	   <input type="button" value="大字体" onclick = "changeFont(16)">
+	   <input type="button" value="小字体" onclick = "changeFont(12)">
+
+	   <script>
+	   	      // 按钮的click事件监听函数,参数定义为字体的像素值
+	   	      function changeFont(p){
+                 var fontSize = p+"px";  // 定义字号,大小为像素值
+                 // 得到所有文本的DOM,采用了相同的class
+                 var contents = document.getElementsByClassName('content');
+                 // 用循环比那里所有的文字DOM
+                 for(var i = 0;i<contents.length;i++){
+                     // 通过style的fontSize改变字号
+                     contents[i].style.fontSize = fontSize;
+                 }
+	   	      }
+	   </script>
+</body>
+</html>

@@ -4,7 +4,18 @@
 	<meta charset="UTF-8">
 	<title>访问原宿中style属性的css样式</title>
 </head>
-<body>
-	
+<body style="text-align:center">
+	   <span id="mytxt" style="color:red">测试文本</span>
+	   <br>
+	   <input type="button" onclick="showStyle()" value="查看文本的颜色" />
+
+	   <script>
+	   	      // 按钮的click事件监听函数
+	   	      function showStyle(){
+	   	      	  // 获取目标DOM
+	   	      	  var mytxt = document.getElementById("mytxt");
+	   	      	  alert(mytxt.style.color);
+	   	      }
+	   </script>
 </body>
 </html>
