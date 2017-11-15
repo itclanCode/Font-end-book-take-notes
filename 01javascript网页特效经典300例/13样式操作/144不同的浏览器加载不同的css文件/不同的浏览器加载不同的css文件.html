@@ -3,8 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<title>不同的浏览器加载不同的css文件</title>
+	<link rel="stylesheet" type="text/css" href="css/css1.css">
+	<link rel="stylesheet" type="text/css" href="css/css2.css">
+	<style>
+		 body{
+		 	text-align: center;
+		 }
+	</style>
 </head>
 <body>
-	
+	   <span id="mytxt" class="myclass">测试文版本</span>
+	   <script>
+	           var oBody = document.getElementsByTagName("body")[0];
+	           oBody.onload = function(){
+	           	 chooseCss();
+	           }
+	   	       function chooseCss(){   // body加载时间监听函数
+                    // 这里假设IE使用css1,而其他浏览器使用css2
+                    // 如果是IE浏览器
+                    if(window.navigator.userAgent.indexOf("MSIE")>=1){
+                         // 把样式1禁用
+                         document.styleSheets[0].disabled = true;
+                    }else if(window.navigator.useAgent.indexOf('Firefox')>=1){
+                    	// 如果浏览器为其他,比如chrome
+                    	// 把样式1禁用
+                    	document.styleSheets[0].disabled = true;
+                    }else{
+                    	// 如果把浏览器为其他,比如chrome
+                    	// 把样式1禁用
+                    	document.styleSheets[0].disabled = true;
+                    }
+	   	       }
+	   </script>
 </body>
 </html>
