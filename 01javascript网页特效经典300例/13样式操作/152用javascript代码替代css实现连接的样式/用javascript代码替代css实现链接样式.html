@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用javascript代码替代css实现链接样式</title>
+</head>
+<body style="text-align:center" onclick="linkAble()">
+	   <span id="link">我是一个伪链接</span>
+
+	   <script>
+	   	      // 页面加载完成以后的事件回调
+	   	      function linkAble(p){
+	   	      	  // 获取目标DOM
+	   	      	  var link = document.getElementById("link");  
+	   	      	  link.style.cursor = 'pointer';    // 修改文本的鼠标样式
+	   	      	  link.onmouseover = function(){  // 定义鼠标移入的事件
+                      this.style.color = 'red';
+	   	      	  }
+	   	      	  link.onmouseout = function(){
+	   	      	  	   this.style.color = 'black';  // 字体表黑色
+	   	      	  }
+	   	      	  link.onclick = function(){
+	   	      	  	 alert("我被点击了");
+	   	      	  }
+	   	      }
+	   </script>
+</body>
+</html>
