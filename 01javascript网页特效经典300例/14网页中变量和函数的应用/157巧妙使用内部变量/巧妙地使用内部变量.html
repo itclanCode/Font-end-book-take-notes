@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>巧妙使用内部变量</title>
+</head>
+<body style="text-align:center">
+	  
+
+
+	    <script>
+	    	  var scope = "我是全局变量";   // 自定义全局变量scope
+	    	  function fun(){     // 定义函数fun()
+                  console.log(scope);   // 打印scope变量的值
+                  var scope = "我是局部变量"; // 重新定义一个局部变量,名称也scope
+                  console.log(scope);  // 在打印scope变量的值
+	    	  }
+	    	  fun();            // 执行fun()函数
+	    </script>
+</body>
+</html>

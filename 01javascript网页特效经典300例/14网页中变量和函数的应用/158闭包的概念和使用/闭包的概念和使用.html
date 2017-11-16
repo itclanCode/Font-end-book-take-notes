@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包的概念和使用</title>
+</head>
+<body style="text-align:center">
+		
+
+		<script>
+			    // 
+			    function a(){     // 定义函数a
+			    	var n = 100;  // 定义一个局部变量n
+			    	var b = function(){  // 定义函数b
+                        n++;       // n自加1
+			    	    return n;  // 返回n的值
+			    	}
+			    	return b;    // a的返回结果为函数b
+			    }
+			    var c = a();
+			    c();              // c函数执行一次,n的值变成101
+			    alert(c());         // 在打印n的值,为102
+		</script>
+</body>
+</html>
