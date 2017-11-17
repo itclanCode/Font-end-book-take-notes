@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>让图片保持在层里的上下左右都居中</title>
+	<style>
+		  div{
+		  	width: 500px;
+		  	height: 300px;
+		  	border: 1px solid #000;
+		  	margin: 10px auto;
+		  	padding: 10px;
+		  } 
+	</style>
+</head>
+<body style="text-align:center" onload="init()">
+	   <div><img src="img/1.jpg" alt="" id="the-img"></div>
+
+	   <script>
+	   	       function init(){     // 初始化函数
+                  var　img = document.getElementById("the-img");  // 获取图片的DOM
+                  var width = img.width;   // 图片的宽度
+                  var height = img.height; // 图片的高度
+                  var div = img.parentNode;  // 相框div的dom
+                  var w = div.offsetWidth;   // 相框的实际宽度
+                  var h = div.offsetHeight;  // 相框的实际高度
+                  img.style.margin = '0 auto'; // 通过margin的auto设置左右居中
+                  var padding = (h-height)/2;  // 计算图片的高度差的一半
+                  div.style.paddingTop = (10+padding)+'px';
+	   	       }
+
+	   </script>
+</body>
+</html>
