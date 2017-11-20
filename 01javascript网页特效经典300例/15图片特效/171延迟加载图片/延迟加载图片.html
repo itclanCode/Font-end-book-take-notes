@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>延迟加载图片</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript">
+    function init() {              // 初始化函数
+        setTimeout('checkHeight()', 100);  // 开始定时器
+    }
+
+    function checkHeight() {            // 定时器函数
+        var pic = document.getElementById('pic');   // 图片的DOM
+        var sTop = document.documentElement.scrollTop;
+        var cHeight = document.documentElement.clientHeight;
+        var top = pic.offsetTop;      // 图片距离最左上脚的top值
+        if (sTop + cHeight < top) {   // 如果滚动条还未来到可是区域
+            setTimeout('checkHeight()', 100);   // 定时器继续工作
+        } else {
+            pic.src = pic.attributes['lazy_src'].value;
+        }
+    }
+    </script>
+</head>
+
+<body style="text-align:center" onload="init()">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <img lazy_src="1.jpg" src="" width="150" height="100" id="pic" />
+</body>
+
+</html>
