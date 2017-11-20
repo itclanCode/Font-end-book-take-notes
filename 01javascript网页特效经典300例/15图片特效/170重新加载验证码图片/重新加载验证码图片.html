@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>重新加载验证码图片</title>
+</head>
+<body style="text-align:center">
+	<p><input type="button" value="重新加载" onclick="loadImg()"></p>
+	<img src="img/1.jpg" alt="" width="150" height="100" id="pic">
+
+	<script>
+		   function loadImg(){
+		   	   var pic = document.getElementById("pic");  // 获取图片的DOM
+		   	   // 修改图片的src属性,并添加随机参数
+		   	   pic.src='img/1.jpg?time='+new Date().getTime();
+		   }
+	</script>
+</body>
+</html>

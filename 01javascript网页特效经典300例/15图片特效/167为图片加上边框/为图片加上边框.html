@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>为图片加上边框</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+			
+	</head>
+	<body style="text-align:center">
+		<p>
+			<input type="button" value="蓝色边框" onclick="addBorder('blue');"/>
+			<input type="button" value="红色边框" onclick="addBorder('red');"/>
+		</p>
+		<img src="img/1.jpg"/>
+		<script type="text/javascript">		
+			function addBorder(color){	
+				var pics = document.getElementsByTagName('IMG');
+				for(var i=0;i<pics.length;i++){
+					pics[i].style.border = '2px solid ' + color;
+				}
+			}
+		</script>
+	</body>
+</html>

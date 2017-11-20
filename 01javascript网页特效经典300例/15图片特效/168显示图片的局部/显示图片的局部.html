@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>显示图片的局部</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		
+		<style>
+			div{
+				background: url('img/3.png') 0 0 no-repeat;
+				width: 400px;
+				height: 300px;
+				margin: 10px auto;
+			}
+		</style>
+	</head>
+	<body style="text-align:center">
+		<p>
+			<input type="button" value="显示切换" onclick="showImg();"/>
+		</p>
+		<div id="mydiv"></div>
+
+		<script type="text/javascript">		
+			var arr = [[0,0],[-400,0],[-400,-300],[0,-300]];
+			var index = 0;
+			function showImg(){	
+				var mydiv = document.getElementById('mydiv');
+				index++;
+				if(index == 4)
+					index = 0; 
+				var x = arr[index][0] + 'px';
+				var y = arr[index][1] + 'px';
+				mydiv.style.backgroundPosition = x + ' ' + y;
+			}
+		</script>
+	</body>
+</html>
