@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单独打开一个页面来完成打印功能</title>
+</head>
+<body style="text-align:center" onload="init()">
+	  <form action="">
+	  	<label for="">姓名:</label>
+	  	<input type="text" name="the-name">
+	  	<br>
+	  	<label for="">年龄:</label>
+	  	<input type="text" name="age">
+	  	<br>
+	  	<label for="">性别:</label>
+	  	<input type="text" name="gender">
+	  	<br>
+	  	<input type="button" value="打印" onclick="doPrint()">
+	  </form>
+
+	  <script>
+	            function doPrint(){              // 打印事件回调函数
+	            	window.open('print.html');   // 打开打印页面
+	            }
+	  			function init(){
+	  				var w = window.opener;   // 初始化函数
+	  				var f = w.document.forms[0];  //得到父窗口的表单
+	  				var str = "";                 //拼接字符变量
+	  				str += '姓名:'+f['the-name'].value;  // 拼接姓名及其值
+	  				str += ',年龄:'+f['age'].value;  // 拼接年龄及其值
+	  				str += ',性别'+f['gender'].value;   // 拼接性别及其值
+	  				document.body.innerHTML = str;      // 为body设置文本值
+	  			}
+	  </script>
+</body>
+</html>

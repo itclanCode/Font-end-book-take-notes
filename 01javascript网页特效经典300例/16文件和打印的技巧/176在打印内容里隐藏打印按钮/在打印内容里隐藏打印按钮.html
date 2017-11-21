@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>在打印内容里隐藏打印按钮</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<!-- 定义单独的外部打印样式 -->
+		<link href="print.css" rel="stylesheet" type="text/css" media="print"/>
+		<script type="text/javascript">				
+			function doPrint(){			//监听打印按钮click事件的函数
+				window.print();			//调用系统的打印功能
+			}
+		</script>	
+	</head>
+	<body style="text-align:center">
+		<ul>
+			<li>目录条</li>
+			<li>目录条</li>
+			<li>目录条</li>
+			<li>目录条</li>
+			<li>目录条</li>
+			<li>目录条</li>
+			<li>目录条</li>
+			<li>目录条</li>
+			<li>目录条</li>
+		</ul>
+		<p>
+			<input type="button" value="打印" onclick="doPrint()" class="prtBtn"/>
+		</p>
+	</body>
+</html>

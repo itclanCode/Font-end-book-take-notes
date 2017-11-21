@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>上传图片以后显示缩略图</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	</head>
+	<body style="text-align:center">
+		<div id="demo"></div>
+		<form action="./upload.html" target="tgt_frame" method="post" 
+			enctype="multipart/form-data" name="myform">
+		  <label>
+		  <input type="file" name="mypic" />
+		  </label>
+		  <label>
+		  <input type="submit" name="Submit" value="提交"/>
+		  </label>
+		</form>
+		<iframe id="tgt_frame" name="tgt_frame" style="display:none;"></iframe>
+
+		<script>
+			  function init(){
+			  	 // 获取顶层网页的demo元素,并动态的加载一张图片
+			  	 top.document.getElementById("demo").innerHTML = '<img src="./.jpg">'
+			  }
+		</script>
+	</body>
+</html>

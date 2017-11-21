@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>判断文件上传的类型</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+			
+	</head>
+	<body style="text-align:center">
+		<form action="" method="post" enctype="multipart/form-data" name="myform" onsubmit="chkform();return false;">
+		  <label>
+		  <input type="file" name="mypic" />
+		  </label>
+		  <label>
+		  <input type="submit" name="Submit" value="提交"/>
+		  </label>
+		</form>
+
+		<script type="text/javascript">		
+			function chkform(){						// 判断函数
+				var str = document.forms[0].mypic.value; // 获取上传文件的路径值
+				var name = str.substring(str.lastIndexOf(".")+1).toUpperCase(); 
+				if (name!="JPG"&&name!="GIF"&&name!='PNG'&&name!='BMP'){
+					alert("格式不正确");		// 提示格式错误
+					return false;				// 返回错误
+				}else{
+					document.forms[0].submit(); // 否则提示表单
+				}
+			}
+		</script>
+	</body>
+</html>

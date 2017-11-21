@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>限制多文件上传的文件类型</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>	
+	</head>
+	<body style="text-align:center">
+		<form action="" method="post" enctype="multipart/form-data" name="myform" onsubmit="chkform();return false;">
+		  <label>
+		  <input type="file" name="mypic" multiple/>
+		  </label>
+		  <label>
+		  <input type="submit" name="Submit" value="提交"/>
+		  </label>
+		</form>
+		<script type="text/javascript">		
+			function chkform(){
+				//获取Dom
+				var mypic = document.forms[0].mypic;
+				for(var i = 0 ;i<mypic.files.length;i++){ 
+					//取出其中一个文件
+					var file = mypic.files[i];
+					var name = file.name;//文件的名字，进行大写处理
+					name = name.substring(name.lastIndexOf(".")+1).toUpperCase(); 
+					//判断文件名的后缀是否符合要求
+					if (name!="JPG"&&name!="GIF"&&name!='PNG'&&name!='BMP'){
+						alert("格式不正确");//提示不正确
+						return false;		//直接返回错误，不再提交表单
+					}
+				}
+				//提交表单
+				if(mypic.files.length > 0)
+					document.forms[0].submit();
+			}
+		</script>
+	</body>
+</html>
