@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>把数据转换成一个对象</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">	
+			//根据用户的输入，创建对象的数据
+			function buildObj(){
+				//获取新元素key和val的dom
+				var key = document.getElementById('key').value;
+				var val = document.getElementById('val').value;
+				//取得当前对象文本的内容
+				var str = document.getElementById('obj_txt').innerHTML.trim();
+				//把字符转换成JavaScript的对象
+				var obj = str==''?{}:eval('('+str+')');
+				//使用正则表达式，如果是数字型的数据，则直接连接，否则需要加上单引号
+				if(/\d+\.?\d*/.test(val))
+					obj[key] = val;	
+				else
+					obj[key] = '\''+val+'\'';	//对val加上单引号
+				//把最新的对象的文本形式打印出来
+				document.getElementById('obj_txt').innerHTML = convertObj(obj);
+			}			
+			//把对象转换成文本形式 ，这也是json转换的形式
+			function convertObj(obj){
+				var str = '{';				//定义字符变量，用于串联
+				for(var prop in obj){		//便利对象的属性
+					//如果为对象类型，则遍历连接
+					if(typeof(obj[prop]) == 'object'){
+						str += prop+':'+convertObj(obj[prop])+',';
+					//如果是字符形式，则需要加单引号
+					}else if(typeof(obj[prop]) == 'string'){
+						str += prop+':\''+obj[prop]+'\',';
+					//其他的则直接显示
+					}else{
+						str += prop+':'+obj[prop]+',';
+					}
+				}
+				//把最后一个逗号去掉，否则不是标准的形式
+				if(str.charAt(str.length-1) == ','){
+					str = str.substr(0,str.length-1);
+				}
+				str += '}';					//拼接最后一个大括号
+				return str;					//返回最后的拼接结果字符
+			}
+		</script>
+	</head>
+	<body style="text-align:center">		
+		key:<input type="text" name="key" id="key"/>
+		value:<input type="text" name="val" id="val"/>		
+		<br/>
+		<input type="button" value="添加" onclick="buildObj();" />
+		<br/>
+		<p id="obj_txt"></p>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>在数组的末尾处加入和移除元素</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">	
+			//创建一个长度为5的数组
+			var arr = new Array(5);
+			//循环为数组的元素赋值
+			for(var i=0; i<arr.length; i++){
+				arr[i] = i+1;	//元素的值以此为1-5
+			}
+			//添加一个元素的函数
+			function addOne(){
+				//获取新元素值的dom
+				var e = document.getElementById('elm').value;
+				arr.push(e);//向数组的末端添加一个元素
+			}
+			//删除一个元素的函数
+			function deleteOne(){
+				arr.pop();
+			}
+			//打印数组的值的函数
+			function printArr(){
+				var str = '';	//创建变量，拼凑打印的字符
+				//遍历数组，凑出打印的字符串
+				for(var i=0; i<arr.length; i++){
+					str += arr[i]+','
+				}
+				alert('arr=' + str);//打印数组的值
+			}
+		</script>
+	</head>
+	<body style="text-align:center">		
+		添加的值:<input type="text" name="elm" id="elm"/>
+		<input type="button" value="添加" onclick="addOne();" />
+		<input type="button" value="删除" onclick="deleteOne();" />
+		<input type="button" value="打印arr的值" onclick="printArr();" />
+	</body>
+</html>

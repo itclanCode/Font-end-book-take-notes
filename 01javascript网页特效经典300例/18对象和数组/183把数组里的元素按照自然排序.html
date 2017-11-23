@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>把数组里的元素按照自然排序</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">	
+			var arr = new Array();		//创建一个数组
+			for(var i=0;i<10;i++){		//遍历打印数组的值
+				//数组的值随机获得，100一下的正整数
+				arr[i] = Math.floor(Math.random() * 100);	
+			}
+			//打印最初的顺序
+			alert('原始顺序:' + printArr(arr));
+			arr.sort();					//sort进行排序
+			alert('排序以后:' + printArr(arr));
+			function printArr(arr){
+				var str = '';
+				for(var prop in arr){	//像对象的属性一样遍历数组
+					str += arr[prop] + ',';
+				}
+				return str;
+			}		
+		</script>
+	</head>
+	<body style="text-align:center">		
+	</body>
+</html>

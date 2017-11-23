@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>在数组的任意位置加入和移除元素</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">	
+			//创建一个长度为5的数组
+			var arr = new Array(5);
+			//循环为数组的元素赋值
+			for(var i=0; i<arr.length; i++){
+				arr[i] = i+1;	//元素的值以此为1-5
+			}
+			//添加一个元素的函数
+			function addOne(){
+				//获取新元素值和下标的dom
+				var e = document.getElementById('elm').value;
+				var n = document.getElementById('num').value;
+				n = parseInt(n);	//类型转换
+				arr[n] = e;			//为新元素赋值
+			}
+			//删除一个元素的函数
+			function deleteOne(){
+				//获取下标的dom
+				var n = document.getElementById('num').value;
+				n = parseInt(n);	//类型转换
+				//遍历需要
+				for(var i=n;i<arr.length;i++){
+					arr[i] = arr[i+1];//把元素往前移动一个位置
+				}
+				arr.pop();			//最后把最后一个元素删除掉
+			}
+			//打印数组的值的函数
+			function printArr(){
+				var str = '';	//创建变量，拼凑打印的字符
+				//遍历数组，凑出打印的字符串
+				for(var i=0; i<arr.length; i++){
+					str += arr[i]+','
+				}
+				alert('arr=' + str);//打印数组的值
+			}
+		</script>
+	</head>
+	<body style="text-align:center">		
+		添加的值:<input type="text" name="elm" id="elm"/>
+		下标:<input type="text" name="num" id="num"/>		
+		<br/>
+		<input type="button" value="添加" onclick="addOne();" />
+		<input type="button" value="删除" onclick="deleteOne();" />
+		<br/>
+		<input type="button" value="打印arr的值" onclick="printArr();" />
+	</body>
+</html>

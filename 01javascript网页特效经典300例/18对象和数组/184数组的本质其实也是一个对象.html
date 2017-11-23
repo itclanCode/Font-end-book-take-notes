@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>数组的本质其实也是一个对象</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">	
+			var arr = new Array();		//创建一个数组
+			var obj = new Object();		//创建一个对象
+			arr[0] = 1;					//为数组赋值1，2，3
+			arr[1] = 2;
+			arr[2] = 3;
+			for(var i=0;i<arr.length;i++){//遍历打印数组的值
+				alert(i+':'+arr[i]);
+			}
+			obj['0'] = 1;				//为数组赋值1，2，3，下标与数组相同
+			obj['1'] = 2;
+			obj['2'] = 3;
+			for(var prop in obj){		//根据对象的属性进行遍历
+				alert(prop+':'+obj[prop]);
+			}
+		</script>
+	</head>
+	<body style="text-align:center">		
+	</body>
+</html>

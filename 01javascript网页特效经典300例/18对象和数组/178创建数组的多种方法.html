@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>创建数组的多种方法</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">	
+			//用数组对象的构造函数Array(),Array对象，是内置对象，也提供一个参数，表示数组的初始长度
+			var arr001 = new Array();		//使用new语句创建一个长度为0的数组
+			arr001[0] = 1;					//第一个元素为1
+			arr001[1] = 2;					//第二个元素为2
+			arr001[2] = 3;					//第三个元素为3
+			alert('第二个元素的值是：' + arr001[1]);//下标从0开始
+			//使用中括号创建数组
+			var arr002 = [];				//使用宏大括号创建，也可以初始化一些数据
+			arr002[0] = 'a';				//第一个元素为a
+			arr002[1] = 'b';				//第一个元素为b
+			arr002[2] = 'c';				//第一个元素为c
+			alert('数组的长度：' + arr002.length);//数组的长度是可以动态增加的
+		</script>
+	</head>
+	<body style="text-align:center">		
+	</body>
+</html>

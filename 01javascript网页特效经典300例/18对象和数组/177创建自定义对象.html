@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>创建自定义对象</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">	
+			//最简单的创建对象的办法，由一对大括号括起来
+			var obj001 = {};			//使用大括号创建一个内容是空的对象
+			obj001.prop1 = 100;			//为对象添加一个属性prop1，赋值为100
+			obj001.prop2 = function(){	//为对象添加一个方法prop2，并提供实现
+				alert('我是方法001');	//提供一个alert语句
+			};
+			obj001.prop2();				//调用对象的方法
+			//使用function创建一个对象
+			function createObj002(){	//声明一个创建对象的function，类似于class
+				this.prop1 = 200;		//声明一个属性prop1
+				this.prop2 = function(){//声明一个方法prop2
+					alert('我是方法002');//提供一个alert语句
+				};
+			};
+			var obj002 = new createObj002();//创建一个obj002的对象
+			obj002.prop2();				//调用obj002对象的prop2方法
+			//使用new object()的形式创建对象
+			var obj003 = new Object();
+			obj003.prop1 = 300;			//设置属性prop1
+			obj003.prop2 = function(){	//为对象添加一个方法prop3，并提供实现
+				alert('我是方法003');	//提供一个alert语句
+			};
+			obj003.prop2();				//调用方法
+		</script>
+	</head>
+	<body style="text-align:center">		
+	</body>
+</html>
