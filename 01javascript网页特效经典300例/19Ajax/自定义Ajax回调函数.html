@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>自定义Ajax回调函数</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">
+			var client;				//定义XMLHttpRequest对象，也可以叫ajax客户端
+			//button的click事件回调函数
+			function sendAjax(){
+				// 判断是否支持ActiveX控件,老版本的IE浏览器就需要使用ActiveXObject来创建
+				if(window.ActiveXObject){ 
+					// 通过实例化ActiveXObject的一个新实例来创建XMLHTTPRequest对象
+					client = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				// 其他的大多数浏览器都支持本地javascript对象
+				else if(window.XMLHttpRequest){ 
+					// 创建XMLHTTPRequest的一个实例（本地javascript对象）
+					client = new XMLHttpRequest();
+				}else{
+					alert('创建ajax客户端失败，您的浏览器不支持该服务');
+				}
+				if(client){				//如果创建client成功以后
+					//设置ajax打开以后，建立连接的方式和目标文件，以及是否为异步模式
+					client.open("GET","test001.txt",true);
+					client.send();		//调用send函数，发出ajax请求。
+					alert('ajax请求，已经发出。');
+					client.onreadystatechange = myCallBack;
+				}
+			}
+			//自定义回调函数
+			function myCallBack(){
+				alert(client.readyState);
+				//如果请求的response正常返回，并且http状态为200正常的
+				if (client.readyState==4 && client.status==200){
+					alert("ajax请求的结果是：" + client.responseText);
+				}
+			}
+		</script>
+	</head>
+	<body style="text-align:center">	
+		<input type="button" value="Send" onclick="sendAjax();"/>
+	</body>
+</html>

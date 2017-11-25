@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>为Ajax请求添加参数</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">
+			var client;				//定义XMLHttpRequest对象，也可以叫ajax客户端
+			//button的click事件回调函数
+			function sendAjax(){
+				// 判断是否支持ActiveX控件,老版本的IE浏览器就需要使用ActiveXObject来创建
+				if(window.ActiveXObject){ 
+					// 通过实例化ActiveXObject的一个新实例来创建XMLHTTPRequest对象
+					client = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				// 其他的大多数浏览器都支持本地javascript对象
+				else if(window.XMLHttpRequest){ 
+					// 创建XMLHTTPRequest的一个实例（本地javascript对象）
+					client = new XMLHttpRequest();
+				}else{
+					alert('创建ajax客户端失败，您的浏览器不支持该服务');
+				}
+				if(client){				//如果创建client成功以后
+					var method = document.getElementById("the_method").value;
+					var params = document.getElementById("params").value;
+					//设置ajax打开以后，建立连接的方式和目标文件，以及是否为异步模式
+					if(method == 'POST'){
+						//用POST方法，参数可以通过send方法的参数写到请求的内容流中去
+						client.open(method,"test001.txt",true);
+						client.send(params);		//调用send函数，把参数写的请求内容中
+					}else if(method == 'GET'){
+						//用GET请求方法，参数就只能放在URL的后边，这种方式受到URL长度限制
+						client.open(method, "test001.txt?" + params,true);
+						client.send();
+					}
+					client.onreadystatechange = myCallBack;
+				}
+			}
+			//自定义回调函数
+			function myCallBack(){
+				alert(client.readyState);
+				//如果请求的response正常返回，并且http状态为200正常的
+				if (client.readyState==4 && client.status==200){
+					alert("ajax请求的结果是：" + client.responseText);
+				}
+			}
+		</script>
+	</head>
+	<body style="text-align:center">	
+		<label>请求方法：</label>
+		<select id="the_method">
+			<option value="GET">GET</option>
+			<option value="POST">POST</option>
+		</select>
+		<br/>
+		<label>请求内容：</label>
+		<input type="text" id="params" name="params"/>
+		<br/>
+		<input type="button" value="Send" onclick="sendAjax();"/>
+	</body>
+</html>
