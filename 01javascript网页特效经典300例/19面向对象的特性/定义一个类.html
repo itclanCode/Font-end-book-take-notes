@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>定义一个类</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">
+			//用function模拟一个类出来，同时也作为构造函数
+			function MyClass(){
+				this.name;			//类成员变量name
+				this.fun = function(){//类的成员函数fun
+					//在成员函数里调用成员变量
+					alert('my function name:' + this.name);
+				};
+			}
+			var obj = new MyClass();//使用new实例化一个类
+			obj.name = 'abc';		//为成员变量赋值
+			obj.fun();				//调用成员函数
+		</script>
+	</head>
+	<body style="text-align:center">
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>为对象扩展一个方法</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">
+			var obj = {};			//目标对象
+			//扩展函数
+			function ext(){			
+				//得到用户需要指定的函数的名字
+				var funName = document.getElementById('text').value;
+				//得到函数的代码字符
+				var funCon = document.getElementById('text2').value;
+				//动态指定函数及其实现
+				obj[funName] = function(){
+					//使用eval函数来扩展函数的实现代码
+					eval(funCon);
+				};
+			}
+			//执行函数
+			function fun(){
+				//获取函数名
+				var funName = document.getElementById('text').value;
+				obj[funName].call();//动态调用函数
+			}
+		</script>
+	</head>
+	<body style="text-align:center">
+		方法名：
+		<input value="" type="text" id="text" /><br><br>
+		实现代码：
+		<input value="" type="text2" id="text2" /><br><br>
+		<input value="扩展" type="button" onclick="ext()"/>
+		<input value="调用" type="button" onclick="fun()"/>
+	</body>
+</html>

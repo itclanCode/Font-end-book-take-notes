@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>为string类型的变量扩展一个replaceAll方法</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">		
+			//按钮的click事件监听函数
+			function startReplace(){
+				var mytxt = document.getElementById('mytxt').value;
+				var s1 = document.getElementById('s1').value;
+				var s2 = document.getElementById('s2').value;
+				var str = mytxt.replaceAll(s1,s2);
+				alert('替换以后的字符为：' + str);
+			}
+			String.prototype.replaceAll = function(src,tgt){
+				return this.replace(new RegExp(src,'ig'),tgt);
+			};				
+		</script>
+	</head>
+	<body style="text-align:center">
+		源字符：<input type="text" name="mytxt" id="mytxt"/><br><br>
+		替换字符：<input type="text" name="s1" id="s1"/><br><br>
+		目标字符：<input type="text" name="s2" id="s2"/>
+		<br/><br/>
+		<input type="button" value="替换" onclick="startReplace()"/>
+	</body>
+</html>

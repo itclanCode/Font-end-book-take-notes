@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>为对象扩展一个动态属性</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">
+			var obj = {};			//目标对象
+			//扩展函数
+			function ext(){			
+				//得到用户需要指定的属性的名字
+				var propName = document.getElementById('text').value;
+				//得到具体的值
+				var propVal = document.getElementById('text2').value;
+				obj[propName] = propVal;
+			}
+			//执行函数
+			function fun(){
+				//获取属性名
+				var propName = document.getElementById('text').value;
+				alert(obj[propName]);	//展示结果
+			}
+		</script>
+	</head>
+	<body style="text-align:center">
+		属性名：
+		<input value="" type="text" id="text" /><br><br>
+		属性值：
+		<input value="" type="text2" id="text2" /><br><br>
+		<input value="扩展" type="button" onclick="ext()"/>
+		<input value="展示其值" type="button" onclick="fun()"/>
+	</body>
+</html>

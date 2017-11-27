@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>利用prototype为类创建静态成员</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript">
+			//用function模拟一个类出来，同时也作为构造函数
+			function MyClass(){
+				this.name;			//类成员变量name
+				this.fun = function(){//类的成员函数fun
+					//在成员函数里调用成员变量
+					alert('my function name:' + this.name);
+				};
+			}
+			//为MyClass的prototype定义一个变量
+			MyClass.prototype.myStatic = 123;
+			//为MyClass的prototype定义一个函数，它的所有实例对象都有了
+			MyClass.prototype.myStaticFun = function(){
+				alert("this is a static fun");
+			};
+			var obj = new MyClass();//使用new实例化一个类
+			obj.myStaticFun();//调用静态函数
+		</script>
+	</head>
+	<body style="text-align:center">
+	</body>
+</html>
