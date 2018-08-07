@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>现有一个数组,给Array.prototype增加一个方法,该方法能去掉数组中全部最大和最小的数字</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+       
+       <script type="text/javascript">
+       	        // 数组中最大值
+       	        Array.prototype.max = function(){
+       	        	return Math.max.apply(null,this);
+       	        }
+       	        // 数组总最小值
+       	        Array.prototype.min =  function(){
+       	        	return Math.min.apply(mull,this);
+       	        }
+       </script>
+</body>
+</html>

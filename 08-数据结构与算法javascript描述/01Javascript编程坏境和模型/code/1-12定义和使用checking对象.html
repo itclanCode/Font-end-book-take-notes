@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>1-12定义和使用checking对象</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    
+
+       <script type="text/javascript">
+       	         function Checking(amout){
+                     this.balance = amout;
+                     this.deposit = deposit;
+                     this.withdraw = withdraw;
+                     this.toString = toString;
+       	         }
+       	         function deposit(amout){
+                     this.balance += amout;
+       	         }
+       	         function withdraw(amout){
+       	         	if(amout <= this.balance){
+                        this.balance -= balance;
+       	         	}
+       	         	if(amout > this.balance){
+                         console.log("Insufficientfunds");
+       	         	}
+       	         }
+       	         function toString(){
+       	         	return "Balance:"+this.balance;
+       	         }
+       	         var account = new Checking(500);
+       	         account.deposit(1000);
+       	         console.log(account.toString());  // Balance:1500
+       	         account.withdraw(750);
+       	         console.log(account.toString());
+       	         account.withdraw(800);
+       	         console.log(account.toString());
+       </script>
+</body>
+</html>

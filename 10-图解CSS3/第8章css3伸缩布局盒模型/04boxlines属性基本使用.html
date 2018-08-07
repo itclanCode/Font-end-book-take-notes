@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>box-lines的使用</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	     *{
+	     	padding:0;
+	     	margin:0;
+	     }
+	     body>div{
+	     	border:1px solid #ccc;
+	     	margin:10px;
+	     	width:200px;
+	     	height:200px;
+	     }
+	     div>div{
+	     	border:1px solid #f36;
+	     	padding:10px;
+	     }
+	     .box{
+	     	display:-moz-box;
+	     	display:-webkit-box;
+	     	display:box;
+
+	     	-webkit-box-pack:start;
+	     	-webkit-box-pack:start;
+	     	box-pack:start;
+
+	     	-moz-box-align:start;
+	     	-webkit-box-align:start;
+	     	box-align:start;
+
+	     	-moz-box-lines:multiple;
+	     	-webkit-box-lines:multiple;
+	     	box-lines:multiple;
+
+	     }
+         .box-horizontal{
+         	-moz-box-orient:horizontal;
+         	-webkit-box-orient:horizontal;
+         	box-orient:horizontal;
+         }
+         .box-vertical{
+         	-moz-box-orient:vertical;
+         	-webkit-box-orient:vertical;
+         	box-orient:vertical;
+         }
+</style>
+</head>
+<body>
+        <div class="box box-horizontal">
+        	  <div>A</div>
+        	  <div>B</div>
+        	  <div>C</div>
+        	  <div>D</div>
+        	  <div>E</div>
+        	  <div>F</div>
+        	  <div>G</div>
+        	  <div>H</div>
+        	  <div>I</div>
+        	  <div>J</div>
+        	  <div>K</div>
+        </div>
+        <div class="box box-vertical">
+        	  <div>A</div>
+        	  <div>B</div>
+        	  <div>C</div>
+        	  <div>D</div>
+        	  <div>E</div>
+        	  <div>F</div>
+        	  <div>G</div>
+        	  <div>H</div>
+        	  <div>I</div>
+        	  <div>J</div>
+        	  <div>K</div>
+        </div>
+</body>
+</html>

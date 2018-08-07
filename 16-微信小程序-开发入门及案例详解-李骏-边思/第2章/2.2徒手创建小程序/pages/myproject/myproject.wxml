@@ -1,0 +1,6 @@
+<!--pages/myproject/myproject.wxml-->
+<view bindtap='countClick'>
+        我是myproject页面,你点击了{{count}}次
+</view>
+
+<!-- <button type="{{type}}" bindtap="sureBtn">{{text}}</button> -->

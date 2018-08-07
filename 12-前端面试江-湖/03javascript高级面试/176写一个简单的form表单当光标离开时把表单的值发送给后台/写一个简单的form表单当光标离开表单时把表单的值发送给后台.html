@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>写一个简单的form表单,当光标离开表单时把表单的值发送给后台</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+       
+
+       <script type="text/javascript">
+       	        $("#o_form").blur(function(){
+       	        	 var vals = $(this).val();
+       	        	 $.Ajax({
+       	        	 	url:"./index.php",  // 传给后台的地止
+       	        	 	type:"post",
+       	        	 	data:{$val:vals},  // 传输数据
+       	        	 	success:function(data){ // 如果执行成功,那么执行
+                           alert(data);   // 用data来获取后台传过来的数据,或者是单纯的语句
+       	        	 	}
+       	        	 })
+       	        })
+       </script>
+</body>
+</html>

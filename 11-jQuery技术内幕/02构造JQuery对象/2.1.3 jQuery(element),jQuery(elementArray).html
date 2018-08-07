@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>2.1.3 jQuery(element),jQuery(elementArray)</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	    *{
+	    	margin:0;
+	    	padding:0;
+	    }
+        .foo{
+        	width:100px;
+        	height:300px;
+        	background:red;
+        	margin:100px auto;
+        	cursor:pointer;
+        	color:#fff;
+        }
+</style>
+</head>
+<body>
+    
+       <div class="foo">
+       	  点我收缩,使用slideUp()滑动隐藏div元素
+       </div>
+       <script type="text/javascript" src="js/jquery1.7.2.js"></script>
+       <script type="text/javascript">
+       	         $("div.foo").click(function(){
+       	         	 $(this).slideUp();
+       	         })
+       </script>
+</body>
+</html>

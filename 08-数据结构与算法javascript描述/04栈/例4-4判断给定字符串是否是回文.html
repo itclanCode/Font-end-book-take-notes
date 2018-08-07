@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>例4-4 判断给定字符串是否是回文</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+       
+
+       <script type="text/javascript">
+       	      funciton isPalindrome(word){
+       	      	  var s = new Stack();
+       	      	  for(var i = 0;i<word.length;++i){
+                     s.push(word[i]);
+       	      	  }
+       	      	  var rword = "";
+       	      	  while(s.length()>0){
+                     rword += s.pop();
+       	      	  }
+       	      	  if(word == rword){
+                     return true;
+       	      	  }else{
+       	      	  	 return false;
+       	      	  }
+       	      }
+       	      var word = "hello";
+       	      if(isPalindrome(word)){
+                 console.log(word+"is a palindrome");
+       	      }else{
+       	      	 console.log(word+"is not a palindrome");
+       	      }
+       	      word = "rececar";
+       	      if(isPalindrome(word)){
+       	      	console.log(word+"is a palindrome");
+       	      }else{
+       	      	console.log(word+"is not a palindrome");
+       	      }
+       </script>
+</body>
+</html>

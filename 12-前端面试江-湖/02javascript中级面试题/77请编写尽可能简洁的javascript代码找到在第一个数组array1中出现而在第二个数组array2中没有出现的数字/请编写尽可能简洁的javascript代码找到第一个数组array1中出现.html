@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>请编写尽坑呢简洁的javascript代码,找到在第一个数组array1中出现,而在第二个数组array2中没有出现的数字</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+       
+       <script type="text/javascript">
+       	        function findNulloNum(arr1,arr2){
+                   var str =  arr2.join("");
+                   var result = [];
+                   for(var i = 0,x = 0;i<arr1.length;i++){
+                       if(str.indexOf(arr1[i]) == -1){
+                          result[x] = arr1[i];
+                          x++;
+                       }
+                   }
+                   return result;
+       	        }
+       	        var b = findNullofNum(arr1,arr2);
+       </script>
+</body>
+</html>

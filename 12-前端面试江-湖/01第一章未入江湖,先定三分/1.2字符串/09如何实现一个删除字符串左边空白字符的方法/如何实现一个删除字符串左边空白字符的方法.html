@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>如何实现一个删除字符串左边空白字符的方法?</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+        
+        <script type="text/javascript">
+        	     /*
+        	        去掉字符串左边的空格
+
+        	      */
+        	     function leftTrim(str){
+                     return str.replace(/^\s*/g,"");  // ^符号表示从开头(即左边)进行匹配
+        	     }
+        	     console.log(leftTrim("  sdhkfjsdkgjlsdgf"));
+        </script>
+</body>
+</html>

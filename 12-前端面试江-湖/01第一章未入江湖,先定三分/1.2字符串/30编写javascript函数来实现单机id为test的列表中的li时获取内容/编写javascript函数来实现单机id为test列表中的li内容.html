@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>编写javascript函数来实现单机id为test的列表中的li是,获取其内容</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+         <ul id="test">
+         	<li>第1行</li>
+         	<li>第2行</li>
+         	<li>第3行</li>
+         </ul>
+         <script type="text/javascript">
+         			function getTestLi(){
+         				var objUlLi = document.getElementById("test");
+         				var oLi = objUlLi.getElementsByTagName("li");
+         				for(i = 0,l = oLi.length;i<l;i++){
+                           oLi[i].onclick = function(){
+                           	   alert(this.innerHTML);
+                           }
+         				}
+         			}
+         			getTestLi();
+         </script>
+</body>
+</html>

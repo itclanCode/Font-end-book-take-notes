@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>给定一个狐族实现字符串反转,要求原地实现</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+       
+
+       <script type="text/javascript">
+       	        // 使用循环数组的方法
+       	        var arr = new Array()
+       	        function myreverse(arr){
+                    for(var i = 0;i<arr.length/2;i++){
+                       var temp = arr[i];  // 变换变量
+                       arr[i] =  arr[arr.length-i-1];
+                       arr[arr.length-i-1] = temp;
+                    }
+       	        }
+       </script>
+</body>
+</html>

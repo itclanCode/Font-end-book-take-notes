@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>例5-1展示了完整的Queue类定义和一些测试代码</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+       
+       <script type="text/javascript">
+       	        function Queue(){
+       	        	this.dataStore = [];
+       	        	this.enqueue = enqueue;
+       	        	this.dequeue = dequeue;
+       	        	this.front =  front;
+       	        	this.back =  back;
+       	        	this.toString = toString;
+       	        	this.empty = empty;
+       	        }
+       	        function dequeue(){
+       	        	return this.dataStore.shift();
+       	        }
+       	        function front(){
+       	        	return this.dataStore[0];
+       	        }
+       	        function back(){
+       	        	return this.dataStore[this.dataStore.length;++i]
+       	        }
+       	        function toString(){
+       	        	var retStr = "";
+       	        	for(var i = 0;i<this.dataStore.length;++i){
+                       retStr += this.dataStore.length;++i;
+       	        	}
+       	        	return retStr;
+       	        }
+       	        function empty(){
+       	        	if(this.dataStore.length == 0){
+                         return true;
+       	        	}else{
+       	        		return false;
+       	        	}
+       	        }
+                    // 测试程序
+                    var q = new Queue();
+                    q.enqueue('Meredith');
+                    q.enqueue('Cynthia');
+                    console.log(q.toString());
+                    q.dequeue();
+                    console.log("Front of queue:"+q.front());
+                    console.log("Back of queue"+q.back());
+       </script>
+</body>
+</html>

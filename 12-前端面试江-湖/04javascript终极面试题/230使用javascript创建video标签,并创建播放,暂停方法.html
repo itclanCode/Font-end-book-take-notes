@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>230使用javascript创建video标签,并创建播放,暂停方法</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	   <div class="video-player" align = "center">
+	   	      <video src="myMovIE.m4v" poster ="poster.jpg"></video>
+	   	      <br />
+	   	      <a href="javascript:playPause()">play/Pause</a>
+	   	      <a href="javascript:makeBig()">2x Size</a> | <a href="javascript:makeNormal()">1x size</a>
+	   </div>
+       <script type="text/javascript">
+       	        function playPause(){
+       	        	var myVideo = document.getElementsByTagName("video")[0];
+       	        	if(myVideo.paused){
+                       myVideo.play();
+       	        	}else{
+       	        		myVideo.pause();
+       	        	}
+       	        	function makeBig(){
+       	        		var myVideo = document.getElementsByTagName('video')[0];
+
+       	        		myVideo.height = (myVideo.videoHeight*2);
+       	        	}
+       	        	function makeNormal(){
+       	        		var myVideo = document.getElementsByTagName('video');
+       	        		myVideo.height = (myVideo.videoHeight);
+       	        	}
+       	        }
+       </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>找出ID为newList的HTML元素下的第一个节点,并将其移动到newsList的最后</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+          
+		  <div id="newsList">
+		  	<p class="a">1</p>
+		  	<p class="b">2</p>
+		  	<p class="c">3</p>
+		  </div>
+          <script type="text/javascript">
+          	         var ul = document.getElementById("newsList");
+          	         ul.appendChild(ul.firstChild);
+          </script>
+</body>
+</html>

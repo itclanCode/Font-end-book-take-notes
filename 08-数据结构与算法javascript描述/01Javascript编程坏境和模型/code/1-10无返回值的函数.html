@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>1-10javascript中的子程或者void函数</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    
+
+       <script type="text/javascript">
+       	        function curve(arr,amount){
+                    for(var i = 0;i<arr.length;++i){
+                         arr[i] += amount;
+                    }
+       	        }
+       	        var grades = [77,73,74,81,90];
+       	        curve(grades,5);
+       	        console.log(grades);   
+       	        /*
+       	           展示了如何定义一个没有返回值的函数,使用该函数并不是为了得到它的返回值,而是为了执行函数中定义的操作
+       	           javascript中,函数的参数传递方式都是按值传递,没有按引用传递的参数,但是JavaScript中有保存引用的对象,比如数组,它们是按引用传递的
+
+       	         */
+       </script>
+</body>
+</html>

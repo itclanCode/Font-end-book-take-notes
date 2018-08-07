@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>箭头函数没有this绑定</title>
+</head>
+<body>
+	     
+         
+         <input type="button" value="点我" id="btn" name="">
+	     <script type="text/javascript">
+	     	       var oBtn = document.getElementById("btn");
+	     	       let PageHandler = {
+	     	       	   id:"123456",
+	     	       	   init:function(){
+	     	       	   	  console.log(this.doSomething());
+	     	       	   	  console.log(this==PageHandler);
+	     	       	   },
+	     	       	   doSomething:function(){
+	     	       	   	   console.log("Handling"+"for"+this.id);
+	     	       	   }
+	     	       }
+	     	       oBtn.onclick = function(){
+	     	       	   console.log(PageHandler.init());
+	     	       }
+	     </script>
+</body>
+</html>

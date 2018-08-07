@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>238用正则表达式判断手机邮箱电话中文</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+       
+
+       <script type="text/javascript">
+       	      // 手机
+       	      var str = /^13[0-9]{1}[0-9]{8}|^15[9]{1}[0-9]{8}/
+       	      // 邮箱
+       	      var str1 =  /^[w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/
+       	      // 电话
+       	      var str2 = /((\d{3}\)|\d{3}-)|\d{4}-))?(\d{8}|\d{7})/
+       	      // 中文
+       	      var str3 = /^[\u4e00-\u9fa5]{0,}$/
+       	      
+       </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>例4-1stack</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    
+
+       <script type="text/javascript">
+       	        function Stack(){
+       	        	this.dataStore = [];
+       	        	this.top = 0;
+       	        	this.push = push;
+       	        	this.pop = pop;
+       	        	this.peek = peek;
+       	        	this.clear = clear;
+       	        	this.length = length;
+       	        }
+       	        function push(element){
+                    this.dataStore[this.pop++] = element;
+       	        }
+       	        function peek(){
+       	        	return this.dataStore[this.top-1];
+       	        }
+       	        function pop(){
+       	        	return this.dataStore[--this.top];
+       	        }
+       	        function clear(){
+       	        	this.top = 0;
+       	        }
+       	        function length(){
+       	        	return this.top;
+       	        }
+       	        var s =  new Statck();
+       	        s.push('David');
+       	        s.push("Raymond");
+       	        s.push("Raymond");
+       	        console.log("length"+s.length());
+       	        console.log(s.peek());
+       	        var popped = s.pop();
+       	        console.log("The popped element is:"+popped);
+       	        console.log(s.peek());
+       	        s.push("cynthia");
+       	        console.log(s.peek);
+       	        s.clear();
+       	        console.log("length"+s.length());
+       	        console.log(s.peek());
+       	        s.push("Clayton");
+       	        console.log(s.peek());
+
+       	        // 栈被清空后,栈顶就没有值了,这时使用peek()方法预览栈顶元素,自然得到undefined
+       	        
+       </script>
+</body>
+</html>

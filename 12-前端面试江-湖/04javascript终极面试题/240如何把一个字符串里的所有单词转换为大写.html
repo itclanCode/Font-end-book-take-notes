@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>240 如何把一个字符串里所有单词的第一个字符转换为大写</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+     
+
+       <script type="text/javascript">
+       	         var words = string.split("");
+       	         for(var i = 0;i<words.length;i++){
+                    words[i] = words[i].charAt(0).toUpperCase()+words[i].slice(1);
+       	         }
+       	         return words.join("")
+       </script>
+</body>
+</html>

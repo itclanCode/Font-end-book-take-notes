@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>编写一个js函数,实时显示当前的时间</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+       
+
+       <script type="text/javascript">
+       	         function getTime(){
+       	         	var now_Date = new Date();
+       	         	var nowYear;
+       	         	var nowMonth;
+       	         	var nowDay;
+       	         	var nowdate;
+       	         	var nowHouse;
+       	         	var nowMinutes;
+       	         	var nowSeconds;
+       	         	nowYear = now_Date.getYear();
+       	         	nowMonth = now_Date.getMonth()+1;
+       	         	nowDay =  now_Date.getDay();
+       	         	if(nowDay == 0){
+                       nowDay = "日";
+       	         	}
+       	         }
+       	         nowdate = now_Date.getDate();
+       	         nowHourse = now_Date.getHours();
+       	         if(nowHourse==0){
+                    nowHourse = 12;
+       	         }
+       	         nowMinutes = now_Date.getMinutes();
+       	         nowSeconds = now_Date.getSeconds();
+       	         var timerDetails = "今天是"+nowYear+"年"+nowMonth+"月"+nowdate+"日"+""+星+nowDay+""+nowHourse+"时"+nowMinutes+"分"+nowSeconds+"秒"
+       </script>
+</body>
+</html>

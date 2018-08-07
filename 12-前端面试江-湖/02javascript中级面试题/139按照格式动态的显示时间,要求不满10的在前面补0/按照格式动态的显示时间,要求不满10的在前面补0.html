@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>按照格式动态的显示时间,要求不满10的在前面补0</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+        
+
+        <script type="text/javascript">
+        	       new function(){
+        	       	   with(new Date());
+        	       }
+        	       var t = function(a){
+                       return a<10?"0"+a:a;
+        	       }
+        	       alert(getFullYear()+"年"+t(getMonth()+1)+"月")+t(getDate())+"日"+t(getHours())+"时"+t(getMinutes())+"分"+t(getSeconds())+"秒";
+        </script>
+</body>
+</html>

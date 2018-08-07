@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>如何获取浏览器URL中查询字符串的参数</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    
+
+        <script type="text/javascript">
+        	      function getQuery(name){
+                     var reg = new RegExp("(^|&)"+name+"=([^&]*)(&|$)");
+                     var r =  window.location.search.substr(1).match(reg);
+                     if(r!=null){
+                        return unescape(r[2]);
+                        return null;
+                     }
+        	      }
+        </script>
+</body>
+</html>

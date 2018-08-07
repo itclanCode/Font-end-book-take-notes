@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>写一个含糊来验证E-mail的有效性</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+       <input type="text" name="" id="email">
+       <input type="button" value="提交" name="" onclick="doSubmit()" />
+       <script type="text/javascript">
+       	        // 来自javacriptCN
+       	        var email = document.getElementById("email");
+       	        function doSubmit(){
+       	        	var emailText = email.value;
+       	        	// 输入会否为空
+       	        	if(emailText != null && emailText!=""){
+                        // 长度不能小于6位
+                        if(emailText.length>=6){
+                            // 使用@分割成数组
+                            var temp = emailText.split('@');
+                            if(temp.length == 2){
+                                // 包含且只包含一个@符号
+                                // 获取@符号后面的部分(即域名)
+                                var domain = temp[1];
+                                var lastChar =  domain.substring(domain.length-1,domain.length);
+                                // 最后一个字符不是数字(非数字的转换结果为NaN)
+                                if(parseInt(lastChar).toString() == 'NaN'){
+                                   // 域名包含,才是正确的
+                                   if(domain.indexOf('.')!= -1){
+                                       var darr = domain.split('.');
+                                       var name =  darr[0].toUpperCase();
+                                       alert("你好,来自"+name+"的用户");
+                                       return;
+                                   }
+                                }
+                            }
+                        }
+       	        	}
+       	        	alert("请输入正确的E-mail地止");
+       	        }
+       	        
+       </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>请写一个函数getParamenters来获取浏览器地止URl全部参数</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+       
+
+
+       <script type="text/javascript">
+       	          function getParamenters(name){
+                     var reg = new RegExp("(^|&)"+name+"=([^&]*)(&|$)");
+                     var r =  window.location.search.ubstr(1).match(reg);
+                     if(r!=null){
+                        return unescape(r[2]);
+                        return null;
+                     }
+       	          }
+       	          
+       </script>
+</body>
+</html>

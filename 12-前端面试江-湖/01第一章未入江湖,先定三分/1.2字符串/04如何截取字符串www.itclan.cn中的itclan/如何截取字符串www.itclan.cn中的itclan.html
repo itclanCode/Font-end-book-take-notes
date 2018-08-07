@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>如何截取字符串www.itclan.cn中的itclan</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+        
+        <script type="text/javascript">
+        	      /*
+        	          解析:采用substr方法
+					  定义和用法:substr方法用于返回一个从指定位置开始的指定长度的子字符串
+					  语法:stringObject.substr(start,[,length]);
+					  参数描述:
+					  * start必需:它是所需的子字符串的起始位置,字符串中的第一个字符串的缩影为0
+					  * length可选,指定返回的子字符串中应包括的字符个数
+
+
+        	       */
+        	      var siteurl = "www.itclan.cn";
+        	      console.log("未通过substr截取字符串函数处理之前",siteurl);
+        	      var result = siteurl.substr(4,6);
+        	      console.log("通过substr截取字符串函数处理之后",result);
+        </script>
+</body>
+</html>

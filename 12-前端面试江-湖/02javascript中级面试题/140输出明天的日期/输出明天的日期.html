@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>输出明天的日期</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+       
+       <script type="text/javascript">
+       	        function GetDateStr(AddDayCount){
+                    var dd  = new Date();
+                    dd.setDate(dd.getDate()+AddDayCount);  // 获取AddDayCount天的日期
+                    var y =  dd.getFullYear();
+                    var m =  dd.getMonth()+1;       // 获取当前的月份
+                    var d =  dd.getDate();
+                    return y+"-"+m+"-"+d;
+       	        }
+       	        document.write("<br />明天:"+GetDateStr(1));
+       </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>box-direction属性基本使用</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	   *{
+	   	 padding: 0;
+	   	 margin: 0;
+	   }
+	   body>div{
+	   	  border:1px solid #ccc;
+	   	  margin:20px;
+	   }
+	   div>div{
+	   	  border:1px solid #f36;
+	   	  padding:10px;
+	   }
+	   .box{
+	   	   display:-moz-box;
+	   	   display:-webkit-box;
+	   	   display:box;
+	   }
+	   .box-horizontal{
+	   	  -moz-box-orient:horizontal;
+	   	  -webkit-box-orient:horizontal;
+	   	  box-orient:horizontal;
+	   	  width:250px;
+	   }
+	   .box-vertical{
+	   	   -moz-box-orient:vertical;
+	   	   -webkit-box-orient:vertical;
+	   	   box-orient:vertical;
+	   }
+	   .box-direciton-reverse{
+	   	   -moz-box-direction:reverse;
+	   	   -webkit-box-direction:reverse;
+	   	   box-direction:reverse;
+	   }
+</style>
+</head>
+<body>
+      <div class="box box-horizontal">
+       	    <div>A</div>
+       	    <div>B</div>
+            <div>C</div>
+       	    <div>D</div>
+       </div>	
+       <div class="box box-horizontal box-direction-reverse">
+       	    <div>A</div>
+       	    <div>B</div>
+            <div>C</div>
+       	    <div>D</div>
+       </div>	
+       <div class="box box-vertical">
+       	        <div>A</div>
+	       	    <div>B</div>
+	            <div>C</div>
+	       	    <div>D</div>
+       </div>	
+       <div class="box box-vertical box-direction-reverse">
+       	        <div>A</div>
+	       	    <div>B</div>
+	            <div>C</div>
+	       	    <div>D</div>
+       </div>		
+</body>
+</html>

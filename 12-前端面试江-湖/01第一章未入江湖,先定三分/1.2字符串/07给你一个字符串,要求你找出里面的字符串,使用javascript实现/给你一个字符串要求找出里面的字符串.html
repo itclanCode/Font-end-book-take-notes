@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+        <script type="text/javascript">
+        	        /*
+        	            007 给你一个字符串string="adadfdsetffqdijsdjkfjskgskgksd";要求你找出里面的字符串qdijs使用javascript实现
+					    解析:这里要用到indexOf()
+						返回字符indexof(string)中字符串string在父串首次出现的位置,从0开始,没有返回-1,方便判断和截取字符串
+						代码如下:
+						str.substring(start,start+search.length)
+        	         */
+        	        var str =  "adadfdsetffqdijsdjkfjskgskgksd";
+    				var search = "qdijs";
+    				var start = str.indexOf(search);
+    				var result = str.substring(11,16);
+    				console.log(result);
+        </script>
+</body>
+</html>

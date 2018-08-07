@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>实现鼠标单机页面中的任意标签alert该标签的名称</title>
+<meta name="description" content="" author="随笔川迹" personQQ="1046678249">
+<meta name="keywords" content="" weChatPublicId="itclanCoder">
+<link href="" rel="stylesheet">
+</head>
+<body>
+        
+
+        <script type="text/javascript">
+        	      document.onclick = function(e){
+                      var e = (e || event);
+                      var o = e["target"] || e["srcElement"];
+                      alert(o.tagName.toLowerCase);
+        	      }
+        </script>
+</body>
+</html>
